@@ -1,0 +1,2 @@
+class StpDpr < ApplicationRecord
+end

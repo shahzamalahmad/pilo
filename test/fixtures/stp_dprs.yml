@@ -1,0 +1,43 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sr_no: MyString
+  location: MyString
+  operator_name: MyString
+  uniform: MyString
+  mask: MyString
+  photos: MyString
+  videos: MyString
+  live_location: MyString
+  behaviour: MyString
+  punctuality: MyString
+  pcl_display_picture: MyString
+  daily_report: MyString
+  r_and_m: MyString
+  backwash: MyString
+  blower_oil: MyString
+  compressor_oil: MyString
+  outer_area: MyString
+  maintainance: MyString
+  total_marks: MyString
+
+two:
+  sr_no: MyString
+  location: MyString
+  operator_name: MyString
+  uniform: MyString
+  mask: MyString
+  photos: MyString
+  videos: MyString
+  live_location: MyString
+  behaviour: MyString
+  punctuality: MyString
+  pcl_display_picture: MyString
+  daily_report: MyString
+  r_and_m: MyString
+  backwash: MyString
+  blower_oil: MyString
+  compressor_oil: MyString
+  outer_area: MyString
+  maintainance: MyString
+  total_marks: MyString

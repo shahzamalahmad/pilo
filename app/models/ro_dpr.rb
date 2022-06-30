@@ -1,0 +1,2 @@
+class RoDpr < ApplicationRecord
+end
