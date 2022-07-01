@@ -1,16 +1,30 @@
 <div style="margin-left: 20px;" >
 	<h3>DPR</h3>
-	<% @dprs.each do |dpr| %>
-
-	<a href="http://localhost:3000/<%= dpr.link %>"><%= dpr.name %></a>
+	<br>
 
 
+	<%= link_to "RO Operator DPR", ro_dprs_path, class:"navbar-brand" %>
+	<br>
+	<br>
+	<%= link_to "STP Operator DPR", stp_dprs_path, class:"navbar-brand" %>
+	
 
-		
+
+
+
+
+
+
+	<!-- <#% @dprs.each do |dpr| %>
+
+	<a href="http://localhost:3000/<#%= dpr.link %>"><#%= dpr.name %></a>
+
+
 		<br>
 		<br>
 
-	<% end %>
+	<#% end %> -->
+	
 
 </div>
 
