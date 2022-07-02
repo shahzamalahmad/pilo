@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_30_190455) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_02_131357) do
   create_table "dprs", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -51,11 +51,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_30_190455) do
     t.string "tds"
     t.string "flow"
     t.index ["dpr_id"], name: "index_ro_dprs_on_dpr_id"
-  end
-
-  create_table "ro_temps", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "stp_dprs", force: :cascade do |t|
