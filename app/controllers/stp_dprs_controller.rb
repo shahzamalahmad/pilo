@@ -1,7 +1,7 @@
 class StpDprsController < ApplicationController
 def index
 	@stp_dpr =  StpDpr.all
-	@dpr = Dpr.find(9)
+	# @dpr = Dpr.find(9)
 	 @i = 0
 end
 
@@ -23,8 +23,6 @@ def new
   end
 
   def create
-  	 # @dpr = Dpr.find(9)
-
 
    @stp_dpr = StpDpr.new(stp_dpr_params)
    if @stp_dpr.save

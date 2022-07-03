@@ -2,11 +2,9 @@ class RoDprsController < ApplicationController
 
 	def index
 		@ro_dpr =  RoDpr.all
-		# if params[:id]
-		# 		@dpr_id = params[:id]
-		#       @dpr_name = params[:name]
+		
 		 
-     @dpr = Dpr.find(9)
+     # @dpr = Dpr.find(9)
 		  # end
 		  @i = 0
 	end
