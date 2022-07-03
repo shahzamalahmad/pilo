@@ -43,7 +43,7 @@ def new
         @stp_dpr = StpDpr.find(params[:id])
 
 
-    if @stp_dpr.update(stp_dpr_params)
+    if @stp_dpr.update(stp_dpr)
       redirect_to @stp_dpr
     else
       render :edit, status: :unprocessable_entity

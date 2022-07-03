@@ -52,7 +52,7 @@ class RoDprsController < ApplicationController
         @ro_dpr = RoDpr.find(params[:id])
 
 
-    if @ro_dpr.update(ro_dpr_params)
+    if @ro_dpr.update(ro_dpr)
       redirect_to @ro_dpr
     else
       render :edit, status: :unprocessable_entity
