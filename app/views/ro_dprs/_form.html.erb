@@ -21,6 +21,13 @@
   <br>
   <div class="row align-items-start">
     <div class="col">
+      <h5><%= form.label :area, style: "display: block" %> </h5>
+      
+        <%= form.select :area, options_for_select([["Select One", ""], "Agra", "Mathura", "Vrindawan", "Barsana", "Delhi","banaras", "ayodhya"]), :class => 'genForm_dropBox' %>
+    </div>
+  <br>
+  <div class="row align-items-start">
+    <div class="col">
       <h5><%= form.label :location, style: "display: block" %> </h5>
       
         <%= form.select :location, options_for_select([["Select One", ""], "Taj east window", "Taj west window", "Taj west parking", "I'timad ud daulah", "Sikandra","District hospital Agra", "Fatehpur ASI", "Fatehpur authority", "Agra fort", "Taj east entry"]), :class => 'genForm_dropBox' %>
@@ -229,8 +236,8 @@
       </div>
       <br>
       <div class="col">
-        <h5><%= form.label :dpr_id, style: "display: block", style:"display: none;" %> </h5>
-        <%= form.number_field :dpr_id, id: :ro_dpr_dpr_id, value:9, class:"form-control", style:"display: none;" %>
+       <!--  <h5><#%= form.label :dpr_id, style: "display: block", style:"display: none;" %> </h5>
+        <#%= form.number_field :dpr_id, id: :ro_dpr_dpr_id, value:9, class:"form-control", style:"display: none;" %> -->
 
       </div>
       <br>

@@ -33,7 +33,7 @@ class RoDprsController < ApplicationController
   	 # @dpr = Dpr.find(9)
 
 
-   @ro_dpr = RoDpr.new(ro_dpr)
+   @ro_dpr = RoDpr.new(ro_dpr_params)
    if @ro_dpr.save
       redirect_to @ro_dpr
     else
@@ -52,7 +52,7 @@ class RoDprsController < ApplicationController
         @ro_dpr = RoDpr.find(params[:id])
 
 
-    if @ro_dpr.update(ro_dpr)
+    if @ro_dpr.update(ro_dpr_params)
       redirect_to @ro_dpr
     else
       render :edit, status: :unprocessable_entity
@@ -61,13 +61,14 @@ class RoDprsController < ApplicationController
   end
 
   def destroy
-  	# @ro_dpr.destroy_params[:id]
-
   	@ro_dpr = RoDpr.find(params[:id])    
-    @ro_dpr.destroy
-
+    @ro_dpr.active = false
+    @ro_dpr.save
+if @ro_dpr.save
     redirect_to root_path, status: :see_other
-    
+else
+  render :action => 'edit'
+end
   end
 
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_02_131357) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_03_183057) do
   create_table "dprs", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -45,11 +45,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_02_131357) do
     t.integer "total_marks"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "dpr_id", null: false
+    t.integer "dpr_id"
     t.string "ph"
     t.string "temp"
     t.string "tds"
     t.string "flow"
+    t.string "area"
     t.index ["dpr_id"], name: "index_ro_dprs_on_dpr_id"
   end
 
@@ -73,7 +74,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_02_131357) do
     t.string "total_marks"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "dpr_id", null: false
+    t.integer "dpr_id"
     t.string "outer_area_maintainance"
     t.string "date"
     t.index ["dpr_id"], name: "index_stp_dprs_on_dpr_id"

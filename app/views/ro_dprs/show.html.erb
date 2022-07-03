@@ -108,8 +108,5 @@
    <br> 
    <%= link_to "Edit", edit_ro_dpr_path(@ro_dpr) %> 
    <br>
-   <%= link_to "Delete", ro_dpr_path(@ro_dpr), data: {
-                    turbo_method: :delete,
-                    turbo_confirm: "Are you sure?"
-                  }, class: "btn btn-outline-danger btn-sm" %> 
+   <%= link_to "Delete", ro_dpr_path(@ro_dpr), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %> 
 </ul>

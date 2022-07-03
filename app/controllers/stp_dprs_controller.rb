@@ -24,7 +24,7 @@ def new
 
   def create
 
-   @stp_dpr = StpDpr.new(stp_dpr)
+   @stp_dpr = StpDpr.new(stp_dpr_params)
    if @stp_dpr.save
       redirect_to @stp_dpr
     else
@@ -43,7 +43,7 @@ def new
         @stp_dpr = StpDpr.find(params[:id])
 
 
-    if @stp_dpr.update(stp_dpr)
+    if @stp_dpr.update(stp_dpr_params)
       redirect_to @stp_dpr
     else
       render :edit, status: :unprocessable_entity
