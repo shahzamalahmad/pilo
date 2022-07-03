@@ -24,7 +24,7 @@ def new
 
   def create
 
-   @stp_dpr = StpDpr.new(stp_dpr_params)
+   @stp_dpr = StpDpr.new(stp_dpr)
    if @stp_dpr.save
       redirect_to @stp_dpr
     else

@@ -33,7 +33,7 @@ class RoDprsController < ApplicationController
   	 # @dpr = Dpr.find(9)
 
 
-   @ro_dpr = RoDpr.new(ro_dpr_params)
+   @ro_dpr = RoDpr.new(ro_dpr)
    if @ro_dpr.save
       redirect_to @ro_dpr
     else
