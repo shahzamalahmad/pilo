@@ -79,5 +79,11 @@ end
     def ro_dpr_params
       params.require(:ro_dpr).permit(:sr_no, :location, :operator_name, :tshirt, :icard, :mask, :shoes, :hygiene, :live_location, :behaviour, :punctuality, :photos, :machine_videos, :feedback, :inspaction, :backlight, :wrapping, :tv, :glass, :nozzle, :cip_backwash, :cleaning, :camera, :tds, :flow, :total_marks, :ph, :temp, :dpr_id)
     end
+    # validate :operator_name_existing
+
+   
+    # def operator_name_existing
+    #   errors.add(:operator_name_id, :missing) if operator_name.blank?
+    # end
     
 end

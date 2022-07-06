@@ -18,24 +18,25 @@
     <% form.text_field :sr_no, class:"form-control", placeholder:"Sr No" %>
    
   </div>
+  
   <br>
   <div class="row align-items-start">
     <div class="col">
       <h5><%= form.label :area, style: "display: block" %> </h5>
       
-        <%= form.select :area, options_for_select([["Select One", ""], "Agra", "Mathura", "Vrindawan", "Barsana", "Delhi","banaras", "ayodhya"]), :class => 'genForm_dropBox' %>
+        <%= form.select :area, options_for_select([["Select area", ""], "Agra", "Mathura", "Vrindawan", "Barsana", "Delhi","banaras", "ayodhya"]), :class => "genForm_dropBox" %>
     </div>
   <br>
-  <div class="row align-items-start">
+
     <div class="col">
       <h5><%= form.label :location, style: "display: block" %> </h5>
       
-        <%= form.select :location, options_for_select([["Select One", ""], "Taj east window", "Taj west window", "Taj west parking", "I'timad ud daulah", "Sikandra","District hospital Agra", "Fatehpur ASI", "Fatehpur authority", "Agra fort", "Taj east entry"]), :class => 'genForm_dropBox' %>
+        <%= form.select :location, options_for_select([["Select location", ""], "Taj east window", "Taj west window", "Taj west parking", "I'timad ud daulah", "Sikandra","District hospital Agra", "Fatehpur ASI", "Fatehpur authority", "Agra fort", "Taj east entry"]), class:"genForm_dropBox" %>
     </div>
   <br>
   <div class="col">
     <h5><%= form.label :operator_name, style: "display: block" %> </h5>
-    <%= form.select :operator_name, options_for_select([["Select One", ""], "Rahul kumar", "Abhishek", "Ajay singh dhakad", "Vishamver", "Damodr","Rijwan qureshi", "mohd Adil", "mohd Faisal", "Teepu khan", "Shahrukh khan", "Abid"]), :class => 'genForm_dropBox' %>
+    <%= form.select :operator_name, options_for_select([["Select operator", ""], "Rahul kumar", "Abhishek", "Ajay singh dhakad", "Vishamver", "Damodr","Rijwan qureshi", "mohd Adil", "mohd Faisal", "Teepu khan", "Shahrukh khan", "Abid"]), class: "genForm_dropBox" %>
   </div>
 </div>
 <br>
