@@ -75,8 +75,5 @@
    <br> 
    <%= link_to "Edit", edit_stp_dpr_path(@stp_dpr) %> 
    <br>
-   <%= link_to "Delete", stp_dpr_path(@stp_dpr), data: {
-                    turbo_method: :delete,
-                    turbo_confirm: "Are you sure?"
-                  }, class: "btn btn-outline-danger btn-sm" %> 
+   <%= button_to "Delete", stp_dpr_path(@stp_dpr), method: :delete, confirm: "do you want?", class: "btn btn-danger" %>  
 </ul>

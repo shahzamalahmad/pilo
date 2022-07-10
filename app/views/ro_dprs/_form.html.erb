@@ -1,5 +1,8 @@
 <div class="container">
+
 <%= form_with model: @ro_dpr do |form| %>
+
+
    <!--  <#% if ro_dpr.errors.any? %>
       <div>
         <h2><#%= pluralize(ro_dpr.errors.count, "error") %> prohibited this ro_dpr from being saved:</h2>
@@ -10,8 +13,8 @@
           <#% end %>
         </ul>
       </div>
-    <#% end %> -->
-    
+    <#% end %>
+     -->
   
   <div class="col">
      <% form.label :sr_no, style: "display: block"%> </div>
@@ -24,20 +27,25 @@
     <div class="col">
       <h5><%= form.label :area, style: "display: block" %> </h5>
       
-        <%= form.select :area, options_for_select([["Select area", ""], "Agra", "Mathura", "Vrindawan", "Barsana", "Delhi","banaras", "ayodhya"]), :class => "genForm_dropBox" %>
+        <%= form.select :area, options_for_select([["Select area", ""], "Agra", "Mathura", "Vrindawan", "Barsana", "Delhi","banaras", "ayodhya"]), { prompt: "Select..." }, { class: "genForm_dropBox", required: true } %>
     </div>
+
   <br>
 
     <div class="col">
       <h5><%= form.label :location, style: "display: block" %> </h5>
       
-        <%= form.select :location, options_for_select([["Select location", ""], "Taj east window", "Taj west window", "Taj west parking", "I'timad ud daulah", "Sikandra","District hospital Agra", "Fatehpur ASI", "Fatehpur authority", "Agra fort", "Taj east entry"]), class:"genForm_dropBox" %>
+        <%= form.select :location, options_for_select([["Select location", ""], "Taj east window", "Taj west window", "Taj west parking", "I'timad ud daulah", "Sikandra","District hospital Agra", "Fatehpur ASI", "Fatehpur authority", "Agra fort", "Taj east entry"]), { prompt: "Select..." }, { class: "genForm_dropBox", required: true } %>
+        
     </div>
+    
   <br>
   <div class="col">
     <h5><%= form.label :operator_name, style: "display: block" %> </h5>
-    <%= form.select :operator_name, options_for_select([["Select operator", ""], "Rahul kumar", "Abhishek", "Ajay singh dhakad", "Rihan", "Damodr","Rijwan qureshi", "mohd Adil", "mohd Faisal", "Teepu khan", "Shahrukh khan", "Abid"]), class: "genForm_dropBox" %>
+    <%= form.select :operator_name, options_for_select([["Select operator", ""], "Rahul kumar", "Abhishek", "Ajay singh dhakad", "Rihan", "Damodr","Rijwan qureshi", "mohd Adil", "mohd Faisal", "Teepu khan", "Shahrukh khan", "Abid"]), { prompt: "Select..." }, { class: "genForm_dropBox", required: true } %>
   </div>
+  
+
 </div>
 <br>
   <div class="row align-items-start">
@@ -201,7 +209,7 @@
     <div class="row align-items-start">
       <div class="col">
         <h5><%= form.label :tds, style: "display: block" %> </h5>
-        <%= form.text_field :tds, class:"form-control", placeholder:"TTT" %>
+        <%= form.text_field :tds, class:"form-control", placeholder:"TTT", :required => true %>
 
       </div>
       <br>
@@ -215,7 +223,7 @@
       <br>
        <div class="col">
         <h5><%= form.label :flow, style: "display: block" %> </h5>
-        <%= form.text_field :flow, class:"form-control", placeholder:"FFF" %>
+        <%= form.text_field :flow, class:"form-control", placeholder:"FFF", :required => true %>
         
 
       </div>

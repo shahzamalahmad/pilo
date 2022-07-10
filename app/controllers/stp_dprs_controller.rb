@@ -57,7 +57,7 @@ def new
   	@stp_dpr = StpDpr.find(params[:id])    
     @stp_dpr.destroy
 
-    redirect_to root_path, status: :see_other
+    redirect_to stp_dprs_path, status: :see_other
     
   end
 

@@ -1,14 +1,17 @@
 class RoDprsController < ApplicationController
 
 	def index
-		@ro_dpr =  RoDpr.all
-		
+    @page = params[:page] || 1
+    pageCount = 11
+    offset = ((@page.to_i) - 1) * pageCount
+		@ro_dpr =  RoDpr.all.limit(pageCount).offset(offset)
+		    @i = 0
+        # @pagearray = [1,2,3,4,5,6]
+        @k = 0
+        
 		 
-     # @dpr = Dpr.find(9)
-		  # end
-		  @i = 0
 	end
-
+  
 
   def show
       @ro_dpr = RoDpr.all
@@ -30,15 +33,21 @@ class RoDprsController < ApplicationController
   
 
   def create
-  	 # @dpr = Dpr.find(9)
+  	
 
 
    @ro_dpr = RoDpr.new(ro_dpr_params)
+
+  
+
    if @ro_dpr.save
+    flash.now[:notice] = 'Message sent!'
       redirect_to @ro_dpr
     else
+      flash.now[:alert] = 'Error while sending message!'
       render :new, status: :unprocessable_entity
     end
+
 
   end
 
@@ -62,13 +71,10 @@ class RoDprsController < ApplicationController
 
   def destroy
   	@ro_dpr = RoDpr.find(params[:id])    
-    @ro_dpr.active = false
-    @ro_dpr.save
-if @ro_dpr.save
-    redirect_to root_path, status: :see_other
-else
-  render :action => 'edit'
-end
+    @ro_dpr.destroy
+
+    redirect_to ro_dprs_path, status: :see_other
+
   end
 
 

@@ -8,10 +8,10 @@ post 'stp_dprs/create', to: "stp_dprs#create"
 
   
    get 'ro_dprs/show/:id', to: "ro_dprs#show"
-  # get 'ro_dprs/about'
    get 'ro_dprs/new'
+   get 'ro_dprs/today_dpr'
+   
    post 'ro_dprs/create', to: "ro_dprs#create"
-   #post 'ro_dprs/destroy', to: "ro_dprs#destroy"
    post 'ro_dprs/:id/edit', to: "ro_dprs#edit"
 
    

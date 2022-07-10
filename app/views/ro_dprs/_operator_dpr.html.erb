@@ -3,19 +3,19 @@
 	<h1> RO OPERATOR DPR </h1>
 </h3>
 
-
+<%= form_with model: @today_dpr do |f| %>
 
 <table class="table table-bordered">
   <thead>
     <tr>
       <th scope="col", style="text-align: center;", colspan="11">
-          Operator/uniform/behaviour</th>
+          Operator/unif/behaviour</th>
       <th scope="col", style="text-align: center;", colspan="4">
           photo/video/feedback</th>
       <th scope="col", style="text-align: center;", colspan="12">
        Machine maintinance</th>
       <th scope="col", style="text-align: center;">
-        
+        <%= f.date_field :date %>
       </th>
       
       
@@ -82,7 +82,8 @@
       <tr>
         
         
-         <th scope="col", style="text-align: center;"> <%= link_to @i += 1,rodpr %> </th>
+        <!--  <th scope="col", style="text-align: center;"> <%#= link_to @i += 1,rodpr %> </th> -->
+        <th scope="col", style="text-align: center;"> <%= link_to rodpr.id %> </th>
        <th scope="col", style="text-align: center;"> <%= rodpr.location %> </th>
        <th scope="col", style="text-align: center;"> <%= link_to rodpr.operator_name,rodpr %> </th>
        <td scope="col", style="text-align: center;"> <%= rodpr.tshirt %> </td>
@@ -120,6 +121,11 @@
     <% end %>
   </tbody>
 </table> 
+
+<br>
+
+      
+<% end %>
 
 
  
