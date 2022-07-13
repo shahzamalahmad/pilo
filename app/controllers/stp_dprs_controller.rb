@@ -1,8 +1,12 @@
 class StpDprsController < ApplicationController
 def index
-	@stp_dpr =  StpDpr.all
-	# @dpr = Dpr.find(9)
-	 @i = 0
+	
+  @page = params[:page] || 1
+    pageCount = 11
+    offset = ((@page.to_i) - 1) * pageCount
+    @stp_dpr =  StpDpr.all.limit(pageCount).offset(offset)
+        @i = 0
+        @k = 0
 end
 
 

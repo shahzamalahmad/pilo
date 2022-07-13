@@ -108,7 +108,9 @@
    
    
    <%= link_to "Edit", edit_ro_dpr_path(@ro_dpr), class: "btn btn-primary" %> 
+
+   <%= link_to "new", ro_dprs_new_path, class:"btn btn-primary", style: "font-size: 20px;" %>
    
-   <br>
+ 
    <%= button_to "Delete", ro_dpr_path(@ro_dpr), method: :delete, confirm: "do you want?", class: "btn btn-danger" %> 
 </ul>
