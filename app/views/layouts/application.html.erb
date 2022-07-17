@@ -33,9 +33,9 @@
        
       <div style="text-align: center;">
         
-        <%= link_to "Pi-Lo", root_path, class:"navbar-brand", style: "font-size: 50px;" %>
-      <br>
-        <%= link_to "Shudh Pani Seva Foundation", root_path, class:"navbar-brand" %>
+        <%= link_to "Pi-Lo", root_path, class:"navbar-brand", style: "font-size: 40px;" %>
+        <br style="margin-top: 0;">
+        <%= link_to "Shudh Pani Seva Foundation", root_path, class:"navbar-brand", style:"font-size: 15px;" %>
       </div>
 
 
@@ -63,7 +63,7 @@
         &nbsp
         &nbsp
         &nbsp
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent", style="width: 80%;">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
               <%= link_to "Home", root_path,class:"nav-link" %>
@@ -71,6 +71,12 @@
 
             <li class="nav-item">
                 <%= link_to "DPR", home_dpr_path, class:"nav-link" %>
+              
+            </li><li class="nav-item">
+                <%= link_to "RO-DPR", ro_dprs_path, class:"nav-link" %>
+              
+            </li><li class="nav-item">
+                <%= link_to "STP-DPR", stp_dprs_path, class:"nav-link" %>
               
             </li>
             
