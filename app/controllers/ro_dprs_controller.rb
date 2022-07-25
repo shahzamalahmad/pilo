@@ -1,15 +1,25 @@
 class RoDprsController < ApplicationController
 
 	def index
-    @page = params[:page] || 1
-    pageCount = 11
-    offset = ((@page.to_i) - 1) * pageCount
-		@ro_dpr =  RoDpr.all.limit(pageCount).offset(offset)
+    
+    @date = params[:date] || Date.today.to_s
+    
+    
+      
+
+    @ro_dpr =  RoDpr.where(date: @date) 
+    # @page = params[:page] || 1
+    # @cd = RoDpr.group(:date).count
+
+    # @cd1 = @cd.keys
+    # @cd3 = @cd1[0]
+    # pageCount = 15
+    # offset = ((@page.to_i) - 1) * pageCount
+    # @ro_dpr =  RoDpr.where(date: Date.today.to_s).order(:date).limit(pageCount).offset(offset)
+    
 		    @i = 0
-        # @pagearray = [1,2,3,4,5,6]
         @k = 0
-        
-		 
+    
 	end
   
 
@@ -79,11 +89,12 @@ class RoDprsController < ApplicationController
 
 
   def about
+
   end
 
  private
     def ro_dpr_params
-      params.require(:ro_dpr).permit(:sr_no, :location, :operator_name, :tshirt, :icard, :mask, :shoes, :hygiene, :live_location, :behaviour, :punctuality, :photos, :machine_videos, :feedback, :inspaction, :backlight, :wrapping, :tv, :glass, :nozzle, :cip_backwash, :cleaning, :camera, :tds, :flow, :total_marks, :ph, :temp, :dpr_id)
+      params.require(:ro_dpr).permit(:sr_no, :location, :operator_name, :tshirt, :icard, :mask, :shoes, :hygiene, :live_location, :behaviour, :punctuality, :photos, :machine_videos, :feedback, :inspaction, :backlight, :wrapping, :tv, :glass, :nozzle, :cip_backwash, :cleaning, :camera, :tds, :flow, :total_marks, :ph, :temp, :date, :dpr_id)
     end
     # validate :operator_name_existing
 

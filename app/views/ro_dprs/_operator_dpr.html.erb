@@ -2,8 +2,9 @@
 
 	<h1> RO OPERATOR DPR </h1>
 
+<br>
 
-<%= form_with model: @today_dpr do |f| %>
+<!-- <#%= form_with model: @today_dpr do |f| %> -->
 
 <table class="table table-bordered">
   <thead>
@@ -15,7 +16,9 @@
       <th scope="col", style="text-align: center;", colspan="12">
        Machine maintinance</th>
       <th scope="col", style="text-align: center;">
-        <%= f.date_field :date %>
+        Date
+        <%= @date %> 
+
       </th>
       
       
@@ -83,7 +86,7 @@
         
         
         <!--  <th scope="col", style="text-align: center;"> <%#= link_to @i += 1,rodpr %> </th> -->
-        <th scope="col", style="text-align: center;"> <%= link_to rodpr.id %> </th>
+        <th scope="col", style="text-align: center;"> <%= link_to @i += 1 %> </th>
        <th scope="col", style="text-align: center;"> <%= rodpr.location %> </th>
        <th scope="col", style="text-align: center;"> <%= link_to rodpr.operator_name,rodpr %> </th>
        <td scope="col", style="text-align: center;"> <%= rodpr.tshirt %> </td>
@@ -116,16 +119,22 @@
        </td>
         
         
-        
       </tr>
+
+     
     <% end %>
   </tbody>
 </table> 
 
 <br>
+       <!--  <div class="action">
+          <#%= f.submit class:'btn btn-primary' %>
+        </div> -->
 
       
-<% end %>
+<!-- <#% end %> -->
+
+
 
 
  

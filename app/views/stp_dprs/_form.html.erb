@@ -34,12 +34,12 @@
     <div class="col">
       <h5><%= form.label :location, style: "display: block" %> </h5>
       
-        <%= form.select :location, options_for_select([["Select location", ""], "Jhansi site 1", "jhansi site 2", "Both Jhansi", "allahabad", "gandhidham", "pune", "Banarash"]), :class => 'genForm_dropBox' %>
+        <%= form.select :location, options_for_select([["Select location", ""], "Jhansi site 1", "jhansi site 2", "Both Jhansi", "allahabad", "gandhidham", "pune", "Banarash"]), { prompt: "Select..." }, { class: "genForm_dropBox", required: true } %>
     </div>
   <br>
   <div class="col">
     <h5><%= form.label :operator_name, style: "display: block" %> </h5>
-    <%= form.select :operator_name, options_for_select([["Select operator", ""], "Asheesh Sevaniya", "Ajay Kumar", "Mithun Ahirvar", "Anil kumar Yadav", "Vikrant Mishra"]), :class => 'genForm_dropBox' %>
+    <%= form.select :operator_name, options_for_select([["Select operator", ""], "Asheesh Sevaniya", "Ajay Kumar", "Mithun Ahirvar", "Anil kumar Yadav", "Vikrant Mishra"]), { prompt: "Select..." }, { class: "genForm_dropBox", required: true } %>
   </div>
 </div>
 <br>

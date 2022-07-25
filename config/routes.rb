@@ -18,6 +18,7 @@ post 'stp_dprs/create', to: "stp_dprs#create"
   # get 'ro_dprs/ro_operator_dpr'
   # get 'ro_dprs/dpr/stp_operator_dpr'
   get 'home/index'
+  get 'home/about'
   get 'home/dpr'
 
   root "home#index"

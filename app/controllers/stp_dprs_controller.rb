@@ -71,7 +71,7 @@ def new
 
  private
     def stp_dpr_params
-      params.require(:stp_dpr).permit(:sr_no, :location, :operator_name, :uniform, :mask, :photos, :videos, :live_location, :behaviour, :punctuality, :pcl_display_picture, :daily_report, :r_and_m, :backwash, :blower_oil, :compressor_oil, :total_marks, :outer_area_maintainance, :dpr_id)
+      params.require(:stp_dpr).permit(:sr_no, :location, :operator_name, :uniform, :mask, :photos, :videos, :live_location, :behaviour, :punctuality, :pcl_display_picture, :daily_report, :r_and_m, :backwash, :blower_oil, :compressor_oil, :total_marks, :outer_area_maintainance, :date, :dpr_id)
     end
 
 
