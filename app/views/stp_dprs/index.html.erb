@@ -1,30 +1,47 @@
-
-  
-
-
-  <nav aria-label="Page navigation example">
-    <ul class="pagination">
-        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-      <% d=0 %>
-      
-      <% while d < 31  %>
-        <% d+=1 %>
-        <li class="page-item">
-          <a class="page-link" href="?page=<%= d %>">
-              <%= d %> 
-          </a></li>
+<form action="/stp_dprs" style="margin-left: 30px; margin-top: 30px;">
+  <div class="col">
     
-       <% end %>
-        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+     <input type="date" name="date"> 
 
-    </ul>
-  </nav>
+      <input type="submit" value="Submit"> 
+  </div>
+</form>
+  
 <div style="margin-left: 30px; margin-top: 30px;">
-  <h1> STP OPERATOR DPR </h1>
-    <%= render "stp_dpr", class:"page_item" %>
+      <h1> STP OPERATOR DPR </h1>
+
+          <%= render "stp_dpr", class:"page_item" %>
+
+
+    <div class="container">
+     
+       <span style="float: left; width:33%;">
+        <h3>
+          Prepared by:-<!-- <#%= image_tag("szml.jpeg", class:"img-thumbnail", :alt => "sign") %> --></h3>
+         </span>
+          &nbsp
+          &nbsp
+          &nbsp
+          &nbsp
+          &nbsp
+         <span style="float: left; width:33%; margin-top: 0;">
+          <h3>Checked by:-</h3>
+              
+         </span>
+          &nbsp
+          &nbsp
+          &nbsp
+          &nbsp
+          &nbsp
+         <span style="float: right; margin-top: 0;">
+              <h3>Approved by:- </h3>
+       </span> 
+    </div>
 
   
-
+<br>
+<br>
+<br>
 
 
 <%= link_to "new", stp_dprs_new_path, class:"btn btn-primary", style: "font-size: 20px;" %>

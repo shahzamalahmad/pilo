@@ -1,10 +1,12 @@
 class StpDprsController < ApplicationController
 def index
-	
-  @page = params[:page] || 1
-    pageCount = 11
-    offset = ((@page.to_i) - 1) * pageCount
-    @stp_dpr =  StpDpr.all.limit(pageCount).offset(offset)
+	@date = params[:date] || Date.today.to_s 
+    
+    @stp_dpr =  StpDpr.where(date: @date)
+  # @page = params[:page] || 1
+  #   pageCount = 11
+  #   offset = ((@page.to_i) - 1) * pageCount
+  #   @stp_dpr =  StpDpr.all.limit(pageCount).offset(offset)
         @i = 0
         @k = 0
 end

@@ -4,9 +4,7 @@
     <tr>
       <th scope="col", style="text-align: center;", colspan="17">
           Pi-Lo STP JHANSI OPERATOR DPR</th>
-      <th scope="col", style="text-align: center;">
-          <!-- <#%= @stp_dpr.date %> -->
-      </th>
+      <th scope="col", style="text-align: center;"> Date:- <%= @date %> </th>
       
       
     </tr>
@@ -77,7 +75,7 @@
 
        <td scope="col", style="text-align: center;"> <%= stpdpr.total_marks = stpdpr.uniform.to_i + stpdpr.mask.to_i + stpdpr.photos.to_i + stpdpr.videos.to_i + stpdpr.live_location.to_i + stpdpr.behaviour.to_i + stpdpr.punctuality.to_i + stpdpr.pcl_display_picture.to_i + stpdpr.daily_report.to_i + stpdpr.r_and_m.to_i + stpdpr.backwash.to_i + stpdpr.blower_oil.to_i + stpdpr.compressor_oil.to_i + stpdpr.outer_area_maintainance.to_i %> 
        </td>
-       <td scope="col", style="text-align: center;"> <%= stpdpr.date %> </td>
+       
         
       </tr>
     <% end %>

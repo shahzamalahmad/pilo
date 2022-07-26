@@ -1,19 +1,7 @@
 
 <div class="container">
 <%= form_with model: @stp_dpr do |form| %>
-   <!--  <#% if stp_dpr.errors.any? %>
-      <div>
-        <h2><#%= pluralize(ro_dpr.errors.count, "error") %> prohibited this ro_dpr from being saved:</h2>
-
-        <ul>
-          <#% ro_dpr.errors.each do |error| %>
-            <li><#%= error.full_message %></li>
-          <#% end %>
-        </ul>
-      </div>
-    <#% end %> -->
-    
-  
+   
   <div class="col">
      <% form.label :sr_no, style: "display: block"%> </div>
     <% form.text_field :sr_no, class:"form-control", placeholder:"Sr No" %>
@@ -26,7 +14,7 @@
         
         <%= form.label :date, style: "display: block" %> 
       </h5>
-        <%= form.date_field :date %>
+        <%= form.date_field :date, required: true %>
         
       
     </div>
