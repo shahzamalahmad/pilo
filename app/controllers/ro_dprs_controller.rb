@@ -4,9 +4,6 @@ class RoDprsController < ApplicationController
     
     @date = params[:date] || Date.today.to_s
     
-    
-      
-
     @ro_dpr =  RoDpr.where(date: @date) 
     # @page = params[:page] || 1
     # @cd = RoDpr.group(:date).count

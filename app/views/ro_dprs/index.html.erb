@@ -1,24 +1,6 @@
-
-<!-- <nav aria-label="Page navigation example">
-  <ul class="pagination">
-  		<li class="page-item"><a class="page-link" href="#">Previous</a></li>
-  	<#% d=0 %>
-  	
-  	<#% while d < 31  %>
-	    <#% d+=1 %>
-	    <li class="page-item">
-	    	<a class="page-link" href="?page=<#%= d %>">
-	    			<#%= d %> 
-	    	</a></li>
-	
-	   <#% end %>
-	    <li class="page-item"><a class="page-link" href="#">Next</a></li>
-
-  </ul>
-</nav> -->
-<form action="/ro_dprs">
+<form action="/ro_dprs" style="margin-left: 30px; margin-top: 30px;">
 	<div class="col">
-     <label for="date">Date:</label>
+		
 		 <input type="date" name="date"> 
 
 		  <input type="submit" value="Submit"> 
@@ -27,18 +9,16 @@
 
 <div style="margin-left: 30px; margin-top: 30px;">
 
-	<nav aria-label="Page navigation example">
-	  <ul class="pagination">
+	
 
 	    
-	    <li class="page-item"><%= render "operator_dpr", class:"page-link" %>
-	    </li>
+	    <%= render "operator_dpr", class:"page-link" %>
 
 		<br>
-	  </ul>
+	  
   	<div class="container">
 		 
-		   <span style="float: left; width:50%;">
+		   <span style="float: left; width:75%;">
 		   	<h3>
 		   	 	Prepared by:-<%= image_tag("szml.jpeg", class:"img-thumbnail", :alt => "sign") %></h3>
 		   	 </span>
@@ -47,7 +27,7 @@
 		  		&nbsp
 		  		&nbsp
 		  		&nbsp
-		   	 <span style="float: middle; margin-top: 0;">
+		   	 <span style="float: middle; width:50%; margin-top: 0;">
 		   	 	<h3>Checked by:-</h3>
 			   			
 			   </span>
@@ -56,7 +36,7 @@
 		  		&nbsp
 		  		&nbsp
 		  		&nbsp
-		   	 <span style="float: right;">
+		   	 <span style="float: right; width:25%;">
 			   			<h3>Approved by:- </h3>
 		   </span> 
     </div>
@@ -65,7 +45,7 @@
 		  		
 
 		  		
-	</nav>
+	
 	
 <br>
 <br>
