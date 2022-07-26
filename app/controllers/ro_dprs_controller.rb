@@ -2,7 +2,7 @@ class RoDprsController < ApplicationController
 
 	def index
     
-    @date = params[:date] || Date.today.to_s
+    @date = params[:date] || Date.today.to_s 
     
     @ro_dpr =  RoDpr.where(date: @date) 
     # @page = params[:page] || 1
