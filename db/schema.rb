@@ -10,11 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_25_201101) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_30_193232) do
   create_table "areas", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
+    t.string "area_name"
   end
 
   create_table "dprs", force: :cascade do |t|
@@ -27,11 +28,17 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_25_201101) do
   create_table "locations", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "location_name"
+    t.integer "area_id", null: false
+    t.index ["area_id"], name: "index_locations_on_area_id"
   end
 
   create_table "operator_names", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "operator_name"
+    t.integer "location_id", null: false
+    t.index ["location_id"], name: "index_operator_names_on_location_id"
   end
 
   create_table "ro_dprs", force: :cascade do |t|
@@ -67,8 +74,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_25_201101) do
     t.string "tds"
     t.string "flow"
     t.string "area"
-    t.string "date"
     t.string "prepared_by"
+    t.date "date"
     t.index ["dpr_id"], name: "index_ro_dprs_on_dpr_id"
   end
 
@@ -94,7 +101,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_25_201101) do
     t.datetime "updated_at", null: false
     t.integer "dpr_id"
     t.string "outer_area_maintainance"
-    t.string "date"
+    t.date "date"
     t.index ["dpr_id"], name: "index_stp_dprs_on_dpr_id"
   end
 
@@ -105,6 +112,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_25_201101) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "locations", "areas"
+  add_foreign_key "operator_names", "locations"
   add_foreign_key "ro_dprs", "dprs"
   add_foreign_key "stp_dprs", "dprs"
 end

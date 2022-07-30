@@ -24,9 +24,10 @@
   <div class="col">
     <h5><%= form.label :Date, style: "display: block" %> </h5>
 
-        <%= form.date_field :date, class:"form-control" %>
+        <%#= form.date_select :date, required: true %>
+       <%= form.date_field :date, :id => "datepicker" %>
   </div>
-  
+  <!-- (:created_at, :order => [:day, :month, :year]) -->
   <br>
   <div class="row align-items-start">
     <div class="col">

@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.1.1"
 gem "simple_form"
+gem 'bootstrap-datepicker-rails'
 # rails-generate-pdf/Gemfile
 gem 'jquery-rails'
 gem 'wicked_pdf'

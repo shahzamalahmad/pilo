@@ -71,9 +71,14 @@
 
 <ul>
 
-   <%= link_to "All DPR", stp_dprs_path %>
-   <br> 
-   <%= link_to "Edit", edit_stp_dpr_path(@stp_dpr) %> 
+   <%= link_to "All DPR", stp_dprs_path, class: "btn btn-primary" %>
+   
+   
+   <%= link_to "Edit", edit_stp_dpr_path(@stp_dpr), class: "btn btn-primary" %> 
+
+   <%= link_to "new", stp_dprs_new_path, class:"btn btn-primary" %>
    <br>
-   <%= button_to "Delete", stp_dpr_path(@stp_dpr), method: :delete, confirm: "do you want?", class: "btn btn-danger" %>  
+   <br>
+ 
+   <%= button_to "Delete", stp_dpr_path(@stp_dpr), method: :delete, confirm: "do you want?", class: "btn btn-danger" %> 
 </ul>
