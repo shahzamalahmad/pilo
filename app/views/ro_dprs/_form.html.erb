@@ -1,0 +1,281 @@
+<div class="container">
+
+<%= form_with model: @ro_dpr do |form| %>
+
+
+   <!--  <#% if ro_dpr.errors.any? %>
+      <div>
+        <h2><#%= pluralize(ro_dpr.errors.count, "error") %> prohibited this ro_dpr from being saved:</h2>
+
+        <ul>
+          <#% ro_dpr.errors.each do |error| %>
+            <li><#%= error.full_message %></li>
+          <#% end %>
+        </ul>
+      </div>
+    <#% end %>
+     -->
+  
+  <div class="col">
+     <% form.label :sr_no, style: "display: block"%> </div>
+    <% form.text_field :sr_no, class:"form-control", placeholder:"Sr No" %>
+   
+  </div>
+  <div class="col">
+    <h5><%= form.label :Date, style: "display: block" %> </h5>
+
+        <%#= form.date_select :date, required: true %>
+       <%= form.date_field :date, :id => "datepicker" %>
+  </div>
+  <!-- (:created_at, :order => [:day, :month, :year]) -->
+  <br>
+  <div class="row align-items-start">
+    <div class="col">
+      <h5>
+        <%= form.label :area, style: "display: block" %> 
+      </h5>
+        <%= form.select :area, @operators.collect {|u| [ u.area ] } %>
+
+     
+    </div>
+
+  <br>
+
+    <div class="col">
+      <h5>
+        <%= form.label :location, style: "display: block" %> 
+      </h5>
+
+        <%= form.select :location, @operators.collect {|u| [ u.location ] } %>
+
+
+      
+        
+    </div>
+    
+  <br>
+  <div class="col">
+    <h5>
+      <%= form.label :operator_name, style: "display: block" %> 
+    </h5>
+      <%= form.select :operator_name, @operators.collect {|u| [ u.operator_name ] } %>
+
+
+    
+  </div>
+  
+
+</div>
+<br>
+  <div class="row align-items-start">
+    <div class="col">
+      <h5><%= form.label :tshirt, style: "display: block" %> </h5> </h5>
+      <%= form.radio_button :tshirt, "1", value: 1, checked:true %> yes &nbsp
+      <br>
+      <%= form.radio_button :tshirt, '0', value: 0 %> no<br />
+    
+
+  </div>
+<br>
+  <div class="col">
+    <h5><%= form.label :icard, style: "display: block" %> </h5>
+    <%= form.radio_button :icard, "1", value: 1, checked:true %> yes <br>
+      <%= form.radio_button :icard, '0', value: 0 %> no<br />
+  </div>
+<br>
+  <div class="col">
+    <h5><%= form.label :mask, style: "display: block" %> </h5>
+    <%= form.radio_button :mask, "1", value: 1 %> yes <br>
+      <%= form.radio_button :mask, '0', value: 0, checked:true %> no<br />
+  </div>
+</div>
+<br>
+  <div class="row align-items-start">
+    <div class="col">
+    <h5><%= form.label :shoes, style: "display: block" %> </h5>
+    <%= form.radio_button :shoes, "1", value: 1, checked:true %> yes <br>
+      <%= form.radio_button :shoes, '0', value: 0 %> no<br />
+
+  </div>
+  <br>
+  <div class="col">
+    <h5><%= form.label :hygiene, style: "display: block" %> </h5>
+    <%= form.radio_button :hygiene, "1", value: 1, checked:true %> yes <br>
+      <%= form.radio_button :hygiene, '0', value: 0 %> no<br />
+
+  </div>
+  <br>
+  <div class="col">
+    <h5><%= form.label :live_location, style: "display: block" %> </h5>
+    <%= form.radio_button :live_location, "1", value: 1, checked:true %> yes <br>
+      <%= form.radio_button :live_location, '0', value: 0 %> no<br />
+
+  </div>
+</div>
+  <br>
+  <div class="row align-items-start">
+    <div class="col">
+    <h5><%= form.label :behaviour, style: "display: block" %> </h5>
+    <%= form.radio_button :behaviour, "1", value: 1, checked:true %> yes <br>
+      <%= form.radio_button :behaviour, '0', value: 0 %> no<br />
+
+  </div>
+  <br>
+  <div class="col">
+    <h5><%= form.label :punctuality, style: "display: block" %> </h5>
+    <%= form.radio_button :punctuality, "1", value: 1 %> yes <br>
+      <%= form.radio_button :punctuality, '0', value: 0, checked:true %> no<br />
+
+  </div>
+
+
+      <br>
+       <div class="col">
+        <h5><%= form.label :photos, style: "display: block" %> </h5>
+        <%= form.radio_button :photos, "1", value: 1, checked:true %> yes <br>
+          <%= form.radio_button :photos, '0', value: 0 %> no<br />
+
+      </div>
+    </div>
+      <br>
+  <div class="row align-items-start">
+    <div class="col">
+        <h5><%= form.label :machine_videos, style: "display: block" %> </h5>
+        <%= form.radio_button :machine_videos, "1", value: 1 %> yes <br>
+          <%= form.radio_button :machine_videos, '0', value: 0, checked:true %> no<br />
+
+      </div>
+      <br>
+       <div class="col">
+        <h5><%= form.label :feedback, style: "display: block" %> </h5>
+        <%= form.radio_button :feedback, "1", value: 1 %> yes <br>
+          <%= form.radio_button :feedback, '0', value: 0, checked:true %> no<br />
+
+      </div>
+      <br>
+       <div class="col">
+        <h5><%= form.label :inspaction, style: "display: block" %> </h5>
+        <%= form.radio_button :inspaction, "1", value: 1 %> yes <br>
+          <%= form.radio_button :inspaction, '0', value: 0, checked:true %> no<br />
+
+      </div>
+    </div>
+      <br>
+    <div class="row align-items-start">
+      <div class="col">
+        <h5><%= form.label :backlight, style: "display: block" %> </h5>
+        <%= form.radio_button :backlight, "1", value: 1, checked:true %> yes <br>
+          <%= form.radio_button :backlight, '0', value: 0 %> no<br />
+
+      </div>
+      <br>
+       <div class="col">
+        <h5><%= form.label :wrapping, style: "display: block" %> </h5>
+        <%= form.radio_button :wrapping, "1", value: 1, checked:true %> yes <br>
+          <%= form.radio_button :wrapping, '0', value: 0 %> no<br />
+
+      </div>
+      <br>
+       <div class="col">
+        <h5><%= form.label :tv, style: "display: block" %> </h5>
+        <%= form.radio_button :tv, "5", value: 1, checked:true %> yes <br>
+          <%= form.radio_button :tv, '0', value: 0 %> no<br />
+
+      </div>
+    </div>
+      <br>
+    <div class="row align-items-start">
+      <div class="col">
+        <h5><%= form.label :glass, style: "display: block" %> </h5>
+        <%= form.radio_button :glass, "1", value: 1, checked:true %> yes <br>
+          <%= form.radio_button :glass, '0', value: 0 %> no<br />
+
+      </div>
+      <br>
+       <div class="col">
+        <h5><%= form.label :nozzle, style: "display: block" %> </h5>
+        <%= form.radio_button :nozzle, "1", value: 1, checked:true %> single <br>
+        <%= form.radio_button :nozzle, "2", value: 2 %> dual <br>
+          <%= form.radio_button :nozzle, '0', value: 0 %> no<br />
+
+      </div>
+      <br>
+       <div class="col">
+        <h5><%= form.label :cip_backwash, style: "display: block" %> </h5>
+        <%= form.radio_button :cip_backwash, "1", value: 1 %> yes <br>
+          <%= form.radio_button :cip_backwash, '0', value: 0, checked:true %> no<br />
+
+      </div>
+    </div>
+      <br>
+    <div class="row align-items-start">
+      <div class="col">
+        <h5><%= form.label :cleaning, style: "display: block" %> </h5>
+        <%= form.radio_button :cleaning, "1", value: 1 %> yes <br>
+          <%= form.radio_button :cleaning, '0', value: 0, checked:true %> no<br />
+
+      </div>
+      <br>
+       <div class="col">
+        <h5><%= form.label :camera, style: "display: block" %> </h5>
+        <%= form.radio_button :camera, "1", value: 1 %> yes <br>
+          <%= form.radio_button :camera, '0', value: 0, checked:true %> no<br />
+
+      </div>
+      <div class="col"></div>
+    </div>
+      <br>
+    <div class="row align-items-start">
+      <div class="col">
+        <h5><%= form.label :tds, style: "display: block" %> </h5>
+        <%= form.text_field :tds, class:"form-control", placeholder:"TTT", :required => true %>
+
+      </div>
+      <br>
+    <div class="row align-items-start">
+      <div class="col">
+        <h5><%= form.label :ph, style: "display: block" %> </h5>
+        <%= form.text_field :ph, class:"form-control", value:"7.0" %>
+
+      </div>
+
+      <br>
+       <div class="col">
+        <h5><%= form.label :flow, style: "display: block" %> </h5>
+        <%= form.text_field :flow, class:"form-control", placeholder:"FFF", :required => true %>
+        
+
+      </div>
+      <br>
+       <div class="col">
+        <h5><%= form.label :temp, style: "display: block" %> </h5>
+        <%= form.text_field :temp, class:"form-control", value:"20" %>
+        
+
+      </div>
+      <br>
+    </div>
+      
+      <br>
+       <div class="col">
+        <h5><% form.label :total_marks, style: "display: block" %> </h5>
+        <% form.text_field :total_marks, class:"form-control"%>
+
+      </div>
+      <br>
+      <div class="col">
+       <!--  <h5><#%= form.label :dpr_id, style: "display: block", style:"display: none;" %> </h5>
+        <#%= form.number_field :dpr_id, id: :ro_dpr_dpr_id, value:9, class:"form-control", style:"display: none;" %> -->
+
+      </div>
+      <br>
+      
+    <br>
+
+      <div class="action">
+        <%= form.submit class:'btn btn-primary' %>
+      </div>
+
+<% end %>
+</div>
+

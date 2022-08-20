@@ -1,0 +1,57 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sr_no: 1
+  location: MyString
+  operator_name: MyString
+  tshirt: 1
+  icard: 1
+  mask: 1
+  shoes: 1
+  hygiene: 1
+  live_location: 1
+  behaviour: 1
+  punctuality: 1
+  photos: 1
+  machine_videos: 1
+  feedback: 1
+  inspaction: 1
+  backlight: 1
+  wrapping: 1
+  tv: 1
+  glass: 1
+  nozzle: 1
+  cip_backwash: 1
+  cleaning: 1
+  camera: 1
+  tds_ph: 1
+  flow_temp: 1
+  total_marks: 1
+
+two:
+  sr_no: 1
+  location: MyString
+  operator_name: MyString
+  tshirt: 1
+  icard: 1
+  mask: 1
+  shoes: 1
+  hygiene: 1
+  live_location: 1
+  behaviour: 1
+  punctuality: 1
+  photos: 1
+  machine_videos: 1
+  feedback: 1
+  inspaction: 1
+  backlight: 1
+  wrapping: 1
+  tv: 1
+  glass: 1
+  nozzle: 1
+  cip_backwash: 1
+  cleaning: 1
+  camera: 1
+  tds_ph: 1
+  flow_temp: 1
+  total_marks: 1

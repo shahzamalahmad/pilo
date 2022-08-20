@@ -1,0 +1,84 @@
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col", style="text-align: center;">
+          Sr no.</th>
+      <th scope="col", style="text-align: center;">
+          Location</th>
+      <th scope="col", style="text-align: center;">
+        Operator Name</th>
+      <th scope="col", style="text-align: center;">
+          uniform</th>
+      
+      <th scope="col", style="text-align: center;">
+          Mask</th>
+      <th scope="col", style="text-align: center;">
+          photos</th>
+      <th scope="col", style="text-align: center;">
+          videos</th>
+      <th scope="col", style="text-align: center;">
+          live_location</th>
+      <th scope="col", style="text-align: center;">
+          behaviour</th>
+      <th scope="col", style="text-align: center;">
+          punctuality</th>
+      <th scope="col", style="text-align: center;">
+          pcl_display_picture</th>
+      <th scope="col", style="text-align: center;">
+          daily_report</th>
+      <th scope="col", style="text-align: center;">
+          r_and_m</th>
+      <th scope="col", style="text-align: center;">backwash</th>
+      <th scope="col", style="text-align: center;">
+          blower_oil</th>
+      <th scope="col", style="text-align: center;">
+          compressor_oil</th>
+      <th scope="col", style="text-align: center;">
+          outer_area_maintainance</th>
+      <th scope="col", style="text-align: center;">
+          Total Marks</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr>
+        <th scope="col", style="text-align: center;"> <%= link_to params[:id] %> </th>
+       <th scope="col", style="text-align: center;"> <%= @stp_dpr.location %> </th>
+       <th scope="col", style="text-align: center;"> <%= link_to @stp_dpr.operator_name,@stp_dpr %> </th>
+       <td scope="col", style="text-align: center;"> <%= @stp_dpr.uniform %> </td>
+       <td scope="col", style="text-align: center;"> <%= @stp_dpr.mask %> </td>
+       <td scope="col", style="text-align: center;"> <%= @stp_dpr.photos %> </td>
+       <td scope="col", style="text-align: center;"> <%= @stp_dpr.videos %> </td>
+       <td scope="col", style="text-align: center;"> <%= @stp_dpr.live_location %> </td>
+       <td scope="col", style="text-align: center;"> <%= @stp_dpr.behaviour %> </td>
+       <td scope="col", style="text-align: center;"> <%= @stp_dpr.punctuality %> </td>
+       <td scope="col", style="text-align: center;"> <%= @stp_dpr.pcl_display_picture %> </td>
+       <td scope="col", style="text-align: center;"> <%= @stp_dpr.daily_report %> </td>
+       <td scope="col", style="text-align: center;"> <%= @stp_dpr.r_and_m %> </td>
+       <td scope="col", style="text-align: center;"> <%= @stp_dpr.backwash %> </td>
+       <td scope="col", style="text-align: center;"> <%= @stp_dpr.blower_oil %> </td>
+       <td scope="col", style="text-align: center;"> <%= @stp_dpr.compressor_oil %> </td>
+       <td scope="col", style="text-align: center;"> <%= @stp_dpr.outer_area_maintainance %> </td>
+       
+     
+       <td scope="col", style="text-align: center;"> <%= @stp_dpr.total_marks = @stp_dpr.uniform.to_i + @stp_dpr.mask.to_i + @stp_dpr.photos.to_i + @stp_dpr.videos.to_i + @stp_dpr.live_location.to_i + @stp_dpr.behaviour.to_i + @stp_dpr.punctuality.to_i + @stp_dpr.pcl_display_picture.to_i + @stp_dpr.daily_report.to_i + @stp_dpr.r_and_m.to_i + @stp_dpr.backwash.to_i + @stp_dpr.blower_oil.to_i + @stp_dpr.compressor_oil.to_i + @stp_dpr.outer_area_maintainance.to_i %> 
+       </td>
+     </tr>
+       
+  </tbody>
+</table>
+
+<ul>
+
+   <%= link_to "All DPR", stp_dprs_path, class: "btn btn-primary" %>
+   
+   
+   <%= link_to "Edit", edit_stp_dpr_path(@stp_dpr), class: "btn btn-primary" %> 
+
+   <%= link_to "new", stp_dprs_new_path, class:"btn btn-primary" %>
+   <br>
+   <br>
+ 
+   <%= button_to "Delete", stp_dpr_path(@stp_dpr), method: :delete, confirm: "do you want?", class: "btn btn-danger" %> 
+</ul>

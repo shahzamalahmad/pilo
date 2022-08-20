@@ -1,0 +1,116 @@
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col", style="text-align: center;">
+          Sr no.</th>
+      <th scope="col", style="text-align: center;">
+          Location</th>
+      <th scope="col", style="text-align: center;">
+        Operator Name</th>
+      <th scope="col", style="text-align: center;">
+          Tshirt</th>
+      <th scope="col", style="text-align: center;">
+          Icard</th>
+      <th scope="col", style="text-align: center;">
+          Mask</th>
+      <th scope="col", style="text-align: center;">
+          Shoes</th>
+      <th scope="col", style="text-align: center;">
+          Hygiene</th>
+      <th scope="col", style="text-align: center;">
+          Live Location</th>
+      <th scope="col", style="text-align: center;">
+          Behaviour</th>
+      <th scope="col", style="text-align: center;">
+          Punctuality</th>
+      <th scope="col", style="text-align: center;">
+          Photos</th>
+      <th scope="col", style="text-align: center;">
+          Machine Videos</th>
+      <th scope="col", style="text-align: center;">
+          Feedback</th>
+      <th scope="col", style="text-align: center;">
+          Inspaction</th>
+      <th scope="col", style="text-align: center;">
+          Backlight</th>
+      <th scope="col", style="text-align: center;">
+          Wrapping</th>
+      <th scope="col", style="text-align: center;">
+          TV</th>
+      <th scope="col", style="text-align: center;">
+          Glass</th>
+      <th scope="col", style="text-align: center;">
+          Nozzle</th>
+      <th scope="col", style="text-align: center;">
+          Cip & Backwash</th>
+      <th scope="col", style="text-align: center;">
+          Cleaning</th>
+      <th scope="col", style="text-align: center;">
+          Camera</th>
+      <th scope="col", style="text-align: center;", colspan="2">
+          Tds_pH</th>
+      <th scope="col", style="text-align: center;", colspan="2">
+          Flow_Temp</th>
+      <th scope="col", style="text-align: center;">
+          Total Marks</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr>
+        
+        
+         
+       
+       
+
+       <th scope="col", style="text-align: center;"> <%= params[:id] %> </th>
+       <th scope="col", style="text-align: center;"> <%= @ro_dpr.location %> </th>
+       <th scope="col", style="text-align: center;"> <%= @ro_dpr.operator_name %> </th>
+       <td scope="col", style="text-align: center;"> <%= @ro_dpr.tshirt %> </td>
+       <td scope="col", style="text-align: center;"> <%= @ro_dpr.icard %> </td>
+       <td scope="col", style="text-align: center;"> <%= @ro_dpr.mask %> </td>
+       <td scope="col", style="text-align: center;"> <%= @ro_dpr.shoes %> </td>
+       <td scope="col", style="text-align: center;"> <%= @ro_dpr.hygiene %> </td>
+       <td scope="col", style="text-align: center;"> <%= @ro_dpr.live_location %> </td>
+       <td scope="col", style="text-align: center;"> <%= @ro_dpr.behaviour %> </td>
+       <td scope="col", style="text-align: center;"> <%= @ro_dpr.punctuality %> </td>
+       <td scope="col", style="text-align: center;"> <%= @ro_dpr.photos %> </td>
+       <td scope="col", style="text-align: center;"> <%= @ro_dpr.machine_videos %> </td>
+       <td scope="col", style="text-align: center;"> <%= @ro_dpr.feedback %> </td>
+       <td scope="col", style="text-align: center;"> <%= @ro_dpr.inspaction %> </td>
+       <td scope="col", style="text-align: center;"> <%= @ro_dpr.backlight %> </td>
+       <td scope="col", style="text-align: center;"> <%= @ro_dpr.wrapping %> </td>
+       <td scope="col", style="text-align: center;"> <%= @ro_dpr.tv %> </td>
+       <td scope="col", style="text-align: center;"> <%= @ro_dpr.glass %> </td>
+       <td scope="col", style="text-align: center;"> <%= @ro_dpr.nozzle %> </td>
+       <td scope="col", style="text-align: center;"> <%= @ro_dpr.cip_backwash %> </td>
+       <td scope="col", style="text-align: center;"> <%= @ro_dpr.cleaning %> </td>
+       <td scope="col", style="text-align: center;"> <%= @ro_dpr.camera %> </td>
+       <td scope="col", style="text-align: center;"> <%= @ro_dpr.tds %> </td>
+       
+       <td scope="col", style="text-align: center;"> <%= @ro_dpr.ph %> </td>
+
+       <td scope="col", style="text-align: center;"> <%= @ro_dpr.flow %> </td>
+       <td scope="col", style="text-align: center;"> <%= @ro_dpr.temp %> </td>
+     
+       <td scope="col", style="text-align: center;"> <%= @ro_dpr.total_marks = @ro_dpr.tshirt + @ro_dpr.icard + @ro_dpr.mask + @ro_dpr.shoes + @ro_dpr.hygiene + @ro_dpr.live_location + @ro_dpr.behaviour + @ro_dpr.punctuality + @ro_dpr.photos + @ro_dpr.machine_videos + @ro_dpr.feedback + @ro_dpr.inspaction + @ro_dpr.backlight + @ro_dpr.wrapping + @ro_dpr.tv + @ro_dpr.glass + @ro_dpr.nozzle + @ro_dpr.cip_backwash + @ro_dpr.cleaning + @ro_dpr.camera %> 
+       </td>
+     </tr>
+       
+  </tbody>
+</table>
+
+<ul>
+
+   <%= link_to "All DPR", ro_dprs_path, class: "btn btn-primary" %>
+   
+   
+   <%= link_to "Edit", edit_ro_dpr_path(@ro_dpr), class: "btn btn-primary" %> 
+
+   <%= link_to "new", ro_dprs_new_path, class:"btn btn-primary", style: "font-size: 20px;" %>
+   
+ 
+   <%= button_to "Delete", ro_dpr_path(@ro_dpr), method: :delete, confirm: "do you want?", class: "btn btn-danger" %> 
+</ul>

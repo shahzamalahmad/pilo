@@ -1,0 +1,2 @@
+class Dpr < ApplicationRecord
+end

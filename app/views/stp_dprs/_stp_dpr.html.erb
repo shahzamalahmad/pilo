@@ -1,0 +1,86 @@
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col", style="text-align: center;", colspan="17">
+          PI-LO STP JHANSI OPERATOR DPR</th>
+      <th scope="col", style="text-align: center;"> Date:- <%= @date %> </th>
+      
+      
+    </tr>
+  </thead>
+  <thead>
+    <tr>
+      <th scope="col", style="text-align: center;">
+          Sr no.</th>
+      <th scope="col", style="text-align: center;">
+          Location</th>
+      <th scope="col", style="text-align: center;">
+        Operator Name</th>
+      <th scope="col", style="text-align: center;">
+          Uniform</th>
+      
+      <th scope="col", style="text-align: center;">
+          Mask</th>
+      <th scope="col", style="text-align: center;">
+          Photos</th>
+      <th scope="col", style="text-align: center;">
+          Videos</th>
+      <th scope="col", style="text-align: center;">
+          Live Location</th>
+      <th scope="col", style="text-align: center;">
+          Behaviour</th>
+      <th scope="col", style="text-align: center;">
+          Punctuality</th>
+      <th scope="col", style="text-align: center;">
+          PCL Display Picture</th>
+      <th scope="col", style="text-align: center;">
+          Daily Report</th>
+      <th scope="col", style="text-align: center;">
+          R&M</th>
+      <th scope="col", style="text-align: center;">Backwash</th>
+      <th scope="col", style="text-align: center;">
+          Blower Oil</th>
+      <th scope="col", style="text-align: center;">
+          Compressor Oil</th>
+      <th scope="col", style="text-align: center;">
+          Outer Area Maintainance</th>
+      <th scope="col", style="text-align: center;">
+          Total Marks</th>
+    </tr>
+  </thead>
+  <tbody>
+  	<% @stp_dpr.each do |stpdpr|%>
+      <tr>
+        
+        
+         <th scope="col", style="text-align: center;"> <%= link_to @i += 1,stpdpr %> </th>
+       <th scope="col", style="text-align: center;"> <%= stpdpr.location %> </th>
+       <th scope="col", style="text-align: center;"> <%= link_to stpdpr.operator_name,stpdpr %> </th>
+       <td scope="col", style="text-align: center;"> <%= stpdpr.uniform %> </td>
+       <td scope="col", style="text-align: center;"> <%= stpdpr.mask %> </td>
+       <td scope="col", style="text-align: center;"> <%= stpdpr.photos %> </td>
+       <td scope="col", style="text-align: center;"> <%= stpdpr.videos %> </td>
+       <td scope="col", style="text-align: center;"> <%= stpdpr.live_location %> </td>
+       <td scope="col", style="text-align: center;"> <%= stpdpr.behaviour %> </td>
+       <td scope="col", style="text-align: center;"> <%= stpdpr.punctuality %> </td>
+       <td scope="col", style="text-align: center;"> <%= stpdpr.pcl_display_picture %> </td>
+       <td scope="col", style="text-align: center;"> <%= stpdpr.daily_report %> </td>
+       <td scope="col", style="text-align: center;"> <%= stpdpr.r_and_m %> </td>
+       <td scope="col", style="text-align: center;"> <%= stpdpr.backwash %> </td>
+       <td scope="col", style="text-align: center;"> <%= stpdpr.blower_oil %> </td>
+       <td scope="col", style="text-align: center;"> <%= stpdpr.compressor_oil %> </td>
+       <td scope="col", style="text-align: center;"> <%= stpdpr.outer_area_maintainance %> </td>
+       
+
+       <td scope="col", style="text-align: center;"> <%= stpdpr.total_marks = stpdpr.uniform.to_i + stpdpr.mask.to_i + stpdpr.photos.to_i + stpdpr.videos.to_i + stpdpr.live_location.to_i + stpdpr.behaviour.to_i + stpdpr.punctuality.to_i + stpdpr.pcl_display_picture.to_i + stpdpr.daily_report.to_i + stpdpr.r_and_m.to_i + stpdpr.backwash.to_i + stpdpr.blower_oil.to_i + stpdpr.compressor_oil.to_i + stpdpr.outer_area_maintainance.to_i %> 
+       </td>
+       
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table> 
+
+
+ 

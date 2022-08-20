@@ -1,0 +1,41 @@
+<form action="/ro_dprs" style="margin-left: 30px; margin-top: 30px;">
+	<div class="col">
+		
+		 <input type="date" name="date"> 
+
+		  <input type="submit" value="Submit"> 
+  </div>
+</form>
+
+<div style="margin-left: 30px; margin-top: 30px; width: 80%;">
+
+	    <%= render "operator_dpr", class:"page-link" %>
+
+		<br>
+	  
+  	<div>
+	     <h4>
+	   	 	Prepared by:-<!-- <#%= image_tag("szml.jpeg", class:"img-thumbnail", :alt => "sign") %> --></h4>
+	 <br>
+	   	 <h4>Checked by:-</h4>
+		   			
+	<br>
+	   	<h4>Approved by:- </h4>
+		  
+    </div>
+		  			
+		  		
+		  		
+
+		  		
+	
+	
+<br>
+<br>
+<br>
+
+	<%= link_to "new", ro_dprs_new_path, class:"btn btn-primary", style: "font-size: 20px;" %>
+
+</div>
+
+

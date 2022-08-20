@@ -1,0 +1,60 @@
+<h1><%= link_to "Operators",operators_index_path %></h1>
+
+
+<table class="table table-bordered">
+	<tr>
+			
+		<thead>
+			<th scope="col", style="text-align: center;">
+
+				operator ID	
+			</th>
+			<th scope="col", style="text-align: center;">
+
+				OPERATOR's NAME
+			</th>
+			<th scope="col", style="text-align: center;">
+
+				LOCATION
+			</th>
+			<th scope="col", style="text-align: center;">
+
+				AREA
+			</th>
+			<th scope="col", style="text-align: center;">
+
+				PLANT TYPE
+			</th>
+		</thead>
+	</tr>
+	<tr>
+		<tbody>
+			<th scope="col", style="text-align: center;"> <%= params[:id] %> </th>
+			<th scope="col", style="text-align: center;"> 
+				<%= @operators.operator_name %>
+			</th>
+			<th scope="col", style="text-align: center;"> 
+				<%= @operators.location %>
+			</th>
+			<th scope="col", style="text-align: center;"> 
+				<%= @operators.area %>
+			</th>
+			<th scope="col", style="text-align: center;"> 
+				<%= @operators.plant_type %>
+			</th>
+		</tbody>
+
+	</tr>
+</table>
+
+<ul>
+	<%= link_to "All Operators", operators_path, class: "btn btn-primary" %>
+   
+   
+   <%= link_to "Edit", edit_operator_path(@operators), class: "btn btn-primary" %> 
+
+   <%= link_to "new", operators_new_path, class:"btn btn-primary", style: "font-size: 20px;" %>
+   
+ 
+   <%= button_to "Delete", operator_path(@operators), method: :delete, confirm: "do you want?", class: "btn btn-danger" %> 
+</ul>			

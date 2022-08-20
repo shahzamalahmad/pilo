@@ -1,0 +1,140 @@
+
+
+	<h1> RO OPERATOR DPR </h1>
+
+<br>
+
+<!-- <#%= form_with model: @today_dpr do |f| %> -->
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col", style="text-align: center;", colspan="11">
+          Operator/uniform/behaviour</th>
+      <th scope="col", style="text-align: center;", colspan="4">
+          photo/video/feedback</th>
+      <th scope="col", style="text-align: center;", colspan="12">
+       Machine maintinance</th>
+      <th scope="col", style="text-align: center;">
+        Date
+        <%= @date %> 
+
+      </th>
+      
+      
+    </tr>
+  </thead>
+  <thead>
+    <tr>
+      <th scope="col", style="text-align: center;">
+          Sr no.</th>
+      <th scope="col", style="text-align: center;">
+          Location</th>
+      <th scope="col", style="text-align: center;">
+        Operator Name</th>
+      <th scope="col", style="text-align: center;">
+          Tshirt</th>
+      <th scope="col", style="text-align: center;">
+          Icard</th>
+      <th scope="col", style="text-align: center;">
+          Mask</th>
+      <th scope="col", style="text-align: center;">
+          Shoes</th>
+      <th scope="col", style="text-align: center;">
+          Hygiene</th>
+      <th scope="col", style="text-align: center;">
+          Live Location</th>
+      <th scope="col", style="text-align: center;">
+          Behaviour</th>
+      <th scope="col", style="text-align: center;">
+          Punctuality</th>
+      <th scope="col", style="text-align: center;">
+          Photos</th>
+      <th scope="col", style="text-align: center;">
+          Machine Videos</th>
+      <th scope="col", style="text-align: center;">
+          Feedback</th>
+      <th scope="col", style="text-align: center;">
+          Inspaction</th>
+      <th scope="col", style="text-align: center;">
+          Backlight</th>
+      <th scope="col", style="text-align: center;">
+          Wrapping</th>
+      <th scope="col", style="text-align: center;">
+          TV</th>
+      <th scope="col", style="text-align: center;">
+          Glass</th>
+      <th scope="col", style="text-align: center;">
+          Nozzle</th>
+      <th scope="col", style="text-align: center;">
+          Cip & Backwash</th>
+      <th scope="col", style="text-align: center;">
+          Cleaning</th>
+      <th scope="col", style="text-align: center;">
+          Camera</th>
+      <th scope="col", style="text-align: center;", colspan="2">
+          TDS/pH <br> PPM/--</th>
+      <th scope="col", style="text-align: center;", colspan="2">
+          Flow/Temp <br> LPH/°C</th>
+      <th scope="col", style="text-align: center;">
+          Total Marks</th>
+    </tr>
+  </thead>
+  <tbody>
+  	<% @ro_dpr.each do |rodpr|%>
+      <tr>
+        
+        
+        <!--  <th scope="col", style="text-align: center;"> <%#= link_to @i += 1,rodpr %> </th> -->
+        <th scope="col", style="text-align: center;"> <%= link_to @i += 1 %> </th>
+       <th scope="col", style="text-align: center;"> <%= rodpr.location %> </th>
+       <th scope="col", style="text-align: center;"> <%= link_to rodpr.operator_name,rodpr %> </th>
+       <td scope="col", style="text-align: center;"> <%= rodpr.tshirt %> </td>
+       <td scope="col", style="text-align: center;"> <%= rodpr.icard %> </td>
+       <td scope="col", style="text-align: center;"> <%= rodpr.mask %> </td>
+       <td scope="col", style="text-align: center;"> <%= rodpr.shoes %> </td>
+       <td scope="col", style="text-align: center;"> <%= rodpr.hygiene %> </td>
+       <td scope="col", style="text-align: center;"> <%= rodpr.live_location %> </td>
+       <td scope="col", style="text-align: center;"> <%= rodpr.behaviour %> </td>
+       <td scope="col", style="text-align: center;"> <%= rodpr.punctuality %> </td>
+       <td scope="col", style="text-align: center;"> <%= rodpr.photos %> </td>
+       <td scope="col", style="text-align: center;"> <%= rodpr.machine_videos %> </td>
+       <td scope="col", style="text-align: center;"> <%= rodpr.feedback %> </td>
+       <td scope="col", style="text-align: center;"> <%= rodpr.inspaction %> </td>
+       <td scope="col", style="text-align: center;"> <%= rodpr.backlight %> </td>
+       <td scope="col", style="text-align: center;"> <%= rodpr.wrapping %> </td>
+       <td scope="col", style="text-align: center;"> <%= rodpr.tv %> </td>
+       <td scope="col", style="text-align: center;"> <%= rodpr.glass %> </td>
+       <td scope="col", style="text-align: center;"> <%= rodpr.nozzle %> </td>
+       <td scope="col", style="text-align: center;"> <%= rodpr.cip_backwash %> </td>
+       <td scope="col", style="text-align: center;"> <%= rodpr.cleaning %> </td>
+       <td scope="col", style="text-align: center;"> <%= rodpr.camera %> </td>
+       <td scope="col", style="text-align: center;"> <%= rodpr.tds %> </td>
+       <td scope="col", style="text-align: center;"> <%= rodpr.ph %> </td>
+       
+       <td scope="col", style="text-align: center;"> <%= rodpr.flow %> </td>
+       <td scope="col", style="text-align: center;"> <%= rodpr.temp %> </td>
+
+       <td scope="col", style="text-align: center;"> <%= rodpr.total_marks = rodpr.tshirt + rodpr.icard + rodpr.mask + rodpr.shoes + rodpr.hygiene + rodpr.live_location + rodpr.behaviour + rodpr.punctuality + rodpr.photos + rodpr.machine_videos + rodpr.feedback + rodpr.inspaction + rodpr.backlight + rodpr.wrapping + rodpr.tv + rodpr.glass + rodpr.nozzle + rodpr.cip_backwash + rodpr.cleaning + rodpr.camera %> 
+       </td>
+        
+        
+      </tr>
+
+     
+    <% end %>
+  </tbody>
+</table> 
+
+<br>
+       <!--  <div class="action">
+          <#%= f.submit class:'btn btn-primary' %>
+        </div> -->
+
+      
+<!-- <#% end %> -->
+
+
+
+
+ 
