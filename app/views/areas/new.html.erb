@@ -1,0 +1,27 @@
+<div class="card">
+
+  <div class="card-header">
+    <h1>New Area</h1>
+  </div>
+  <br>
+   <div style="margin-top: 10px;">
+
+       <%= form_with model: @areas do |form| %>
+       		
+       		<%= form.label :area_name %>
+       		<%= form.text_field :area_name %>
+
+		   	<br>
+			<br>
+
+
+		  <div class="action">
+		    <%= form.submit class:'btn btn-primary' %>
+		  </div>
+
+       <% end %>
+
+       
+   </div>
+</div>
+

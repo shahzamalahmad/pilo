@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_15_144800) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_24_171219) do
   create_table "areas", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -29,15 +29,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_15_144800) do
     t.datetime "updated_at", null: false
     t.string "location_name"
     t.integer "area_id", null: false
+    t.string "areaname"
     t.index ["area_id"], name: "index_locations_on_area_id"
-  end
-
-  create_table "operator_names", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "operator_name"
-    t.integer "location_id", null: false
-    t.index ["location_id"], name: "index_operator_names_on_location_id"
   end
 
   create_table "operators", force: :cascade do |t|
@@ -47,6 +40,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_15_144800) do
     t.string "plant_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "location_id"
+    t.index ["location_id"], name: "index_operators_on_location_id"
   end
 
   create_table "ro_dprs", force: :cascade do |t|
@@ -114,7 +109,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_15_144800) do
   end
 
   add_foreign_key "locations", "areas"
-  add_foreign_key "operator_names", "locations"
+  add_foreign_key "operators", "locations"
   add_foreign_key "ro_dprs", "dprs"
   add_foreign_key "stp_dprs", "dprs"
 end

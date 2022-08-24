@@ -1,19 +1,22 @@
-<div>
+<div style="margin-left: 20px">
 	<%= form_with model: @operators do |form| %>
-	<%= form.label :operator_name %>
-	<%= form.text_field :operator_name %>
+	<div class="col">
+		 <h5><%= form.label :operator_name, style: "display: block" %> </h5>
+		<%= form.text_field :operator_name %>
 
 
-	<%= form.label :area %>
-	<%= form.text_field :area %>
-	<br>
-	<br>
+		 <h5><%= form.label :area, style: "display: block" %> </h5>
+		<%= form.text_field :area %>
 
-	<%= form.label :location %>
-	<%= form.text_field :location %>
 
-	<%= form.label :plant_type %>
-	<%= form.text_field :plant_type %>
+		 <h5><%= form.label :location, style: "display: block" %> </h5>
+			<%= form.text_field :location %>
+
+
+      <h5><%= form.label :plant_type, style: "display: block" %> </h5>
+      
+        <%= form.select :plant_type, options_for_select([["select"],"RO", "STP", "ETP"]), { class: "genForm_dropBox", required: true } %>
+    </div>
 		<br>
 		<br>
 

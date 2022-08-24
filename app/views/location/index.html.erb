@@ -1,0 +1,27 @@
+
+<h1>Locations</h1>
+
+<div class="container">
+	<ol class="list-group list-group-numbered">
+		<% @locations.each do |location| %>
+			<li class="list-group-item">
+				 <div class="row align-items-start">
+    				<div class="col">
+						<%= location.location_name %>
+					</div>
+					<div class="col">
+				  		<%= button_to 'Destroy', location, method: :delete %>
+				  	</div>
+				  </div>
+			</li>
+
+		<% end %>	
+	</ol>
+	
+
+</div>
+
+<%= link_to "New", location_new_path, class:'btn btn-primary' %>
+
+
+

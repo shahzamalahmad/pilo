@@ -1,4 +1,15 @@
 Rails.application.routes.draw do
+  get 'location/index'
+  get '/location/new'
+  post 'location/create', to: "location#create"
+  post 'location/:id/edit', to: "location#edit"
+
+
+  get 'areas/index'
+  get "/areas/new"
+  post 'areas/create', to: "areas#create"
+  post 'areas/:id/edit', to: "areas#edit"
+
   get 'operators/index'
   get 'operators/show'
   post 'operators/new'
@@ -34,4 +45,5 @@ post 'stp_dprs/create', to: "stp_dprs#create"
 resources :ro_dprs
 resources :stp_dprs
 resources :operators
+resources :areas
 end
