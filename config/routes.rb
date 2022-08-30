@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  get 'location/index'
-  get '/location/new'
-  post 'location/create', to: "location#create"
-  post 'location/:id/edit', to: "location#edit"
+  get 'locations/index'
+  get '/locations/new'
+  # post 'locations/new', to: "locations#new"
+  post 'locations/create', to: 'locations#create'
+  post 'locations/:id/edit', to: "locations#edit"
 
 
   get 'areas/index'
@@ -46,4 +47,5 @@ resources :ro_dprs
 resources :stp_dprs
 resources :operators
 resources :areas
+resources :locations
 end

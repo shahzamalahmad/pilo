@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_24_171219) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_30_174705) do
   create_table "areas", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -25,11 +25,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_24_171219) do
   end
 
   create_table "locations", force: :cascade do |t|
+    t.string "location_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "location_name"
     t.integer "area_id", null: false
-    t.string "areaname"
     t.index ["area_id"], name: "index_locations_on_area_id"
   end
 
@@ -40,7 +39,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_24_171219) do
     t.string "plant_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "location_id"
+    t.integer "location_id", null: false
     t.index ["location_id"], name: "index_operators_on_location_id"
   end
 

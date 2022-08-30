@@ -7,13 +7,16 @@
 			<li class="list-group-item">
 				 <div class="row align-items-start">
     				<div class="col">
-						<%= area.area_name %>
+    					<h4 class="text-uppercase" >
+						
+							<%= area.area_name %>
+							
+						</h4>
 					</div>
 					<div class="col">
-				  		<%= button_to 'Destroy', area, method: :delete %>
+				  			<%= button_to 'Destroy', area, method: :delete %>
 				  	</div>
 				  </div>
-			</li>
 
 		<% end %>	
 	</ol>

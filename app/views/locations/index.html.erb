@@ -10,6 +10,9 @@
 						<%= location.location_name %>
 					</div>
 					<div class="col">
+						<%= location.area.area_name %>
+					</div>
+					<div class="col">
 				  		<%= button_to 'Destroy', location, method: :delete %>
 				  	</div>
 				  </div>
@@ -21,7 +24,7 @@
 
 </div>
 
-<%= link_to "New", location_new_path, class:'btn btn-primary' %>
+<%= link_to "New", new_location_path, class:'btn btn-primary' %>
 
 
 

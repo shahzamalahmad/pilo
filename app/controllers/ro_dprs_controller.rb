@@ -38,6 +38,7 @@ class RoDprsController < ApplicationController
     @ro_dpr = RoDpr.new
    @operators = Operator.all
    @k = 1
+
   end
   
   
@@ -65,6 +66,7 @@ class RoDprsController < ApplicationController
  def edit
     @ro_dpr = RoDpr.find(params[:id])
     @operators = Operator.all
+    
   end
 
 
@@ -77,7 +79,7 @@ class RoDprsController < ApplicationController
     else
       render :edit, status: :unprocessable_entity
     end
-
+    
   end
 
   def destroy
