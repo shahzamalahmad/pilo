@@ -13,17 +13,23 @@ class RoDprsController < ApplicationController
     # pageCount = 15
     # offset = ((@page.to_i) - 1) * pageCount
     # @ro_dpr =  RoDpr.where(date: Date.today.to_s).order(:date).limit(pageCount).offset(offset)
-   @operators = Operator.all
+     @operators = Operator.all
+     @areas = Area.all
+     @locations = Location.all
+ 
     
 		    @i = 0
-       
+      
     
 	end
   
 
   def show
-      @ro_dpr = RoDpr.all
        @ro_dpr = RoDpr.find(params[:id])
+        @operators = Operator.all
+     @areas = Area.all
+     @locations = Location.all
+ 
 
   end
 
@@ -35,18 +41,19 @@ class RoDprsController < ApplicationController
   end
 
   def new
+
     @ro_dpr = RoDpr.new
-   @operators = Operator.all
-   @k = 1
+    @operators = Operator.all
+    @areas = Area.all
+    @locations = Location.all
+    @k = 1
 
   end
   
   
 
   def create
-  	
-
-
+    # binding.pry
    @ro_dpr = RoDpr.new(ro_dpr_params)
 
   
@@ -58,14 +65,18 @@ class RoDprsController < ApplicationController
       flash.now[:alert] = 'Error while sending message!'
       render :new, status: :unprocessable_entity
     end
-   @operators = Operator.all
+    @operators = Operator.all
+    @areas = Area.all
+    @locations = Location.all
 
 
   end
 
  def edit
     @ro_dpr = RoDpr.find(params[:id])
-    @operators = Operator.all
+     @operators = Operator.all
+   @areas = Area.all
+   @locations = Location.all
     
   end
 
@@ -86,7 +97,7 @@ class RoDprsController < ApplicationController
   	@ro_dpr = RoDpr.find(params[:id])    
     @ro_dpr.destroy
 
-    redirect_to ro_dprs_path, status: :see_other
+    redirect_to ro_dprs_path(@ro_dpr), status: :see_other
 
   end
 
@@ -97,13 +108,7 @@ class RoDprsController < ApplicationController
 
  private
     def ro_dpr_params
-      params.require(:ro_dpr).permit(:sr_no, :location, :operator_name, :tshirt, :icard, :mask, :shoes, :hygiene, :live_location, :behaviour, :punctuality, :photos, :machine_videos, :feedback, :inspaction, :backlight, :wrapping, :tv, :glass, :nozzle, :cip_backwash, :cleaning, :camera, :tds, :flow, :total_marks, :ph, :temp, :date, :dpr_id)
+      params.require(:ro_dpr).permit(:sr_no, :area_id, :location_id, :operator_id, :tshirt, :icard, :mask, :shoes, :hygiene, :live_location, :behaviour, :punctuality, :photos, :machine_videos, :feedback, :inspaction, :backlight, :wrapping, :tv, :glass, :nozzle, :cip_backwash, :cleaning, :camera, :tds, :flow, :total_marks, :ph, :temp, :date, :dpr_id)
     end
-    # validate :operator_name_existing
-
-   
-    # def operator_name_existing
-    #   errors.add(:operator_name_id, :missing) if operator_name.blank?
-    # end
     
 end

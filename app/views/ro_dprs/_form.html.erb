@@ -27,6 +27,12 @@
         <%#= form.date_select :date, required: true %>
        <%= form.date_field :date, :id => "datepicker" %>
   </div>
+  <div class="col">
+            <h5><%#= form.label :plant_type, style: "display: block" %> </h5>
+        
+          <%#= form.select :plant_type, options_for_select([["select plant"],"RO", "STP", "ETP"]), { class: "genForm_dropBox", required: true } %>
+    
+  </div>
   <!-- (:created_at, :order => [:day, :month, :year]) -->
   <br>
   <div class="row align-items-start">
@@ -34,7 +40,9 @@
       <h5>
         <%= form.label :area, style: "display: block" %> 
       </h5>
-        <%= form.select :area, @operators.collect {|u| [ u.area ] } %>
+        <%#= form.select :area_name, @areas.collect {|u| [ u.area_name ] } %>
+        <%= form.select 'area_id', options_for_select(@areas.collect{ |u| [u.area_name, u.id] }), options ={:prompt => "Select Area"} %>
+
 
      
     </div>
@@ -46,7 +54,9 @@
         <%= form.label :location, style: "display: block" %> 
       </h5>
 
-        <%= form.select :location, @operators.collect {|u| [ u.location ] } %>
+        <%#= form.select :location, @operators.collect {|u| [ u.location ] } %>
+
+        <%= form.select 'location_id', options_for_select(@locations.collect{ |u| [u.location_name, u.id] }), options ={:prompt => "Select Location"} %>
 
 
       
@@ -58,7 +68,8 @@
     <h5>
       <%= form.label :operator_name, style: "display: block" %> 
     </h5>
-      <%= form.select :operator_name, @operators.collect {|u| [ u.operator_name ] } %>
+      <%= form.select 'operator_id', options_for_select(@operators.collect{ |u| [u.operator_name, u.id] }), options ={:prompt => "Select operator"} %>
+      <%#= form.select :operator_name, @operators.collect {|u| [ u.operator_name ] } %>
 
 
     

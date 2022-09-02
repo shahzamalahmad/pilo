@@ -66,8 +66,8 @@
        
 
        <th scope="col", style="text-align: center;"> <%= params[:id] %> </th>
-       <th scope="col", style="text-align: center;"> <%= @ro_dpr.location %> </th>
-       <th scope="col", style="text-align: center;"> <%= @ro_dpr.operator_name %> </th>
+       <th scope="col", style="text-align: center;"> <%= @ro_dpr.location.location_name %> </th>
+       <th scope="col", style="text-align: center;"> <%= @ro_dpr.operator.operator_name %> </th>
        <td scope="col", style="text-align: center;"> <%= @ro_dpr.tshirt %> </td>
        <td scope="col", style="text-align: center;"> <%= @ro_dpr.icard %> </td>
        <td scope="col", style="text-align: center;"> <%= @ro_dpr.mask %> </td>

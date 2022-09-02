@@ -87,8 +87,8 @@
         
         <!--  <th scope="col", style="text-align: center;"> <%#= link_to @i += 1,rodpr %> </th> -->
         <th scope="col", style="text-align: center;"> <%= link_to @i += 1 %> </th>
-       <th scope="col", style="text-align: center;"> <%= rodpr.location %> </th>
-       <th scope="col", style="text-align: center;"> <%= link_to rodpr.operator_name,rodpr %> </th>
+       <th scope="col", style="text-align: center;"> <%= rodpr.location.location_name %> </th>
+       <th scope="col", style="text-align: center;"> <%= link_to rodpr.operator.operator_name,rodpr %> </th>
        <td scope="col", style="text-align: center;"> <%= rodpr.tshirt %> </td>
        <td scope="col", style="text-align: center;"> <%= rodpr.icard %> </td>
        <td scope="col", style="text-align: center;"> <%= rodpr.mask %> </td>

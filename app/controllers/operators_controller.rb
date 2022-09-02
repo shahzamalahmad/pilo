@@ -1,6 +1,8 @@
 class OperatorsController < ApplicationController
   def index
    @operators = Operator.all
+   @areas = Area.all
+   @locations = Location.all
     @i = 0
   end
 
@@ -9,25 +11,32 @@ class OperatorsController < ApplicationController
   end
 
   def new
-    @operators = Operator.new
+    @operator = Operator.new
+       @areas = Area.all
+   @locations = Location.all
   end
 
   def create
-    @operators = Operator.new(operator_params)
+   
+    @operator = Operator.new(operator_params)
 
   
-
-     if @operators.save
+       # binding.pry
+     if @operator.save
       flash.now[:notice] = 'Message sent!'
-        redirect_to @operators
+        redirect_to @operator
     else
       flash.now[:alert] = 'Error while sending message!'
       render :new, status: :unprocessable_entity
     end
+      @areas = Area.all
+      @locations = Location.all
   end
 
    def edit
-    @operators = Operator.find(params[:id])
+    @operator = Operator.find(params[:id])
+    @areas = Area.all
+    @locations = Location.all
   end
 
   def update
@@ -50,7 +59,7 @@ class OperatorsController < ApplicationController
 
   private
     def operator_params
-      params.require(:operator).permit(:sr_no, :location, :operator_name, :area, :plant_type)
+      params.require(:operator).permit(:operator_name, :area_id, :location_id, :plant_type)
     end
 
 

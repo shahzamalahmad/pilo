@@ -11,8 +11,10 @@
            		<%= form.label :location_name %>
            		<%= form.text_field :location_name %>
 
-
+                <br>
+                <br>
            		<%= form.label :area_name %>
+              <%= form.select 'area_id', options_for_select(@areas.collect{ |u| [u.area_name, u.id] }), options ={:prompt => "Select a Area"} %>
            		<%#= form.select :area_name, @areas.collect {|u| [ u.area_name ] } %>
               <%##= form.text_field :area_id, value:15 %>
 
@@ -21,7 +23,7 @@
               <%#= form.collection_select :area_name, @areas.order(:area_id), :area_name, :area_name %>
               <%#= form.collection_select(:area_name, :area_id, @areas, :id) %>
 
-              <%= form.select 'area_id', options_for_select(@areas.collect{ |u| [u.area_name, u.id] }) %>
+              
     		   	<br>
     			<br>
 

@@ -10,11 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_30_174705) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_01_150215) do
   create_table "areas", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "area_name"
+    t.integer "ro_dprs_id"
+    t.index ["ro_dprs_id"], name: "index_areas_on_ro_dprs_id"
   end
 
   create_table "dprs", force: :cascade do |t|
@@ -29,24 +31,26 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_30_174705) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "area_id", null: false
+    t.integer "ro_dprs_id"
     t.index ["area_id"], name: "index_locations_on_area_id"
+    t.index ["ro_dprs_id"], name: "index_locations_on_ro_dprs_id"
   end
 
   create_table "operators", force: :cascade do |t|
     t.string "operator_name"
-    t.string "location"
-    t.string "area"
     t.string "plant_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "location_id", null: false
+    t.integer "area_id", null: false
+    t.integer "ro_dprs_id"
+    t.index ["area_id"], name: "index_operators_on_area_id"
     t.index ["location_id"], name: "index_operators_on_location_id"
+    t.index ["ro_dprs_id"], name: "index_operators_on_ro_dprs_id"
   end
 
   create_table "ro_dprs", force: :cascade do |t|
     t.integer "sr_no"
-    t.string "location"
-    t.string "operator_name"
     t.integer "tshirt"
     t.integer "icard"
     t.integer "mask"
@@ -75,10 +79,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_30_174705) do
     t.string "temp"
     t.string "tds"
     t.string "flow"
-    t.string "area"
     t.string "prepared_by"
     t.date "date"
+    t.string "plant_type"
+    t.integer "operator_id"
+    t.integer "area_id"
+    t.integer "location_id"
+    t.index ["area_id"], name: "index_ro_dprs_on_area_id"
     t.index ["dpr_id"], name: "index_ro_dprs_on_dpr_id"
+    t.index ["location_id"], name: "index_ro_dprs_on_location_id"
+    t.index ["operator_id"], name: "index_ro_dprs_on_operator_id"
   end
 
   create_table "stp_dprs", force: :cascade do |t|
@@ -107,8 +117,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_30_174705) do
     t.index ["dpr_id"], name: "index_stp_dprs_on_dpr_id"
   end
 
+  add_foreign_key "areas", "ro_dprs", column: "ro_dprs_id"
   add_foreign_key "locations", "areas"
+  add_foreign_key "locations", "ro_dprs", column: "ro_dprs_id"
+  add_foreign_key "operators", "areas"
   add_foreign_key "operators", "locations"
+  add_foreign_key "operators", "ro_dprs", column: "ro_dprs_id"
+  add_foreign_key "ro_dprs", "areas"
   add_foreign_key "ro_dprs", "dprs"
+  add_foreign_key "ro_dprs", "locations"
+  add_foreign_key "ro_dprs", "operators"
   add_foreign_key "stp_dprs", "dprs"
 end
