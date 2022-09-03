@@ -77,16 +77,12 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
-# git tocken   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
-
-
-  gem "bootstrap"
-  gem "pry"
-  gem "devise"
-
-  
  
 end
 group :production do
       gem "pg"
   end
+   gem "pry"
+  gem "devise"
+  gem "bootstrap"
+  
