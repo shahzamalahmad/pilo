@@ -1,4 +1,8 @@
 class ApplicationController < ActionController::Base
+	before_action :authenticate_user!, except: [:home, :about]
+	before_action :authenticate_user!
+
+
 	# before_filter do
 	#   resource = Areas.singularize.to_sym
 	#   method = "#{resource}_params"

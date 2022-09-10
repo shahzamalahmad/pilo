@@ -10,13 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_01_150215) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_08_183613) do
   create_table "areas", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "area_name"
-    t.integer "ro_dprs_id"
-    t.index ["ro_dprs_id"], name: "index_areas_on_ro_dprs_id"
   end
 
   create_table "dprs", force: :cascade do |t|
@@ -31,9 +29,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_150215) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "area_id", null: false
-    t.integer "ro_dprs_id"
     t.index ["area_id"], name: "index_locations_on_area_id"
-    t.index ["ro_dprs_id"], name: "index_locations_on_ro_dprs_id"
   end
 
   create_table "operators", force: :cascade do |t|
@@ -43,10 +39,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_150215) do
     t.datetime "updated_at", null: false
     t.integer "location_id", null: false
     t.integer "area_id", null: false
-    t.integer "ro_dprs_id"
     t.index ["area_id"], name: "index_operators_on_area_id"
     t.index ["location_id"], name: "index_operators_on_location_id"
-    t.index ["ro_dprs_id"], name: "index_operators_on_ro_dprs_id"
   end
 
   create_table "ro_dprs", force: :cascade do |t|
@@ -113,16 +107,24 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_150215) do
     t.datetime "updated_at", null: false
     t.integer "dpr_id"
     t.string "outer_area_maintainance"
-    t.date "date"
     t.index ["dpr_id"], name: "index_stp_dprs_on_dpr_id"
   end
 
-  add_foreign_key "areas", "ro_dprs", column: "ro_dprs_id"
+  create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
   add_foreign_key "locations", "areas"
-  add_foreign_key "locations", "ro_dprs", column: "ro_dprs_id"
   add_foreign_key "operators", "areas"
   add_foreign_key "operators", "locations"
-  add_foreign_key "operators", "ro_dprs", column: "ro_dprs_id"
   add_foreign_key "ro_dprs", "areas"
   add_foreign_key "ro_dprs", "dprs"
   add_foreign_key "ro_dprs", "locations"
