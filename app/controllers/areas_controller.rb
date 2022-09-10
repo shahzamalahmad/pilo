@@ -4,7 +4,7 @@ def index
   end
   
   def new
-    @areas = Area.new
+    @areas = current_user.areas.build
   end
 
    def create
