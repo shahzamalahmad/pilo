@@ -49,4 +49,5 @@ resources :stp_dprs
 resources :operators
 resources :areas
 resources :locations
+
 end

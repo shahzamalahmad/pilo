@@ -1,27 +1,31 @@
 class OperatorsController < ApplicationController
   def index
-   @operators = Operator.all
-   @areas = Area.all
-   @locations = Location.all
+   # @operators = Operator.all
+   @operators = current_user.operators.all
+   @areas = current_user.areas.all
+   @locations = current_user.locations.all
     @i = 0
   end
 
   def show
-    @operators = Operator.find(params[:id])
+    @operators = current_user.operators.find(params[:id])
   end
 
   def new
-    @operator = Operator.new
-       @areas = Area.all
-   @locations = Location.all
+    # @operator = Operator.new
+    @operator = current_user.operators.build
+   #     @areas = Area.all
+   # @locations = Location.all
+   @areas = current_user.areas.all
+   @locations = current_user.locations.all
   end
 
   def create
-   
-    @operator = Operator.new(operator_params)
-
+   # binding.pry
+    # @operator = Operator.new(operator_params)
+    @operator = current_user.operators.build(operator_params)
   
-       # binding.pry
+       
      if @operator.save
       flash.now[:notice] = 'Message sent!'
         redirect_to @operator
@@ -29,14 +33,18 @@ class OperatorsController < ApplicationController
       flash.now[:alert] = 'Error while sending message!'
       render :new, status: :unprocessable_entity
     end
-      @areas = Area.all
-      @locations = Location.all
+      # @areas = Area.all
+      # @locations = Location.all
+   #    @areas = current_user.areas.all
+   # @locations = current_user.locations.all
   end
 
    def edit
     @operator = Operator.find(params[:id])
-    @areas = Area.all
-    @locations = Location.all
+    # @areas = Area.all
+    # @locations = Location.all
+   #  @areas = current_user.areas.all
+   # @locations = current_user.locations.all
   end
 
   def update
@@ -59,7 +67,7 @@ class OperatorsController < ApplicationController
 
   private
     def operator_params
-      params.require(:operator).permit(:operator_name, :area_id, :location_id, :plant_type)
+      params.require(:operator).permit(:operator_name, :area_id, :location_id, :plant_type, :user_id)
     end
 
 

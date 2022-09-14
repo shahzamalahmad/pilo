@@ -23,6 +23,9 @@
               <%#= form.collection_select :area_name, @areas.order(:area_id), :area_name, :area_name %>
               <%#= form.collection_select(:area_name, :area_id, @areas, :id) %>
 
+
+              <%= form.number_field :user_id, value:current_user.id, type: :hidden %>
+
               
     		   	<br>
     			<br>

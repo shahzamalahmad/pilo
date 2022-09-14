@@ -10,11 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_08_183613) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_14_140559) do
   create_table "areas", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "area_name"
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_areas_on_user_id"
   end
 
   create_table "dprs", force: :cascade do |t|
@@ -29,7 +31,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_08_183613) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "area_id", null: false
+    t.integer "user_id"
     t.index ["area_id"], name: "index_locations_on_area_id"
+    t.index ["user_id"], name: "index_locations_on_user_id"
   end
 
   create_table "operators", force: :cascade do |t|
@@ -39,8 +43,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_08_183613) do
     t.datetime "updated_at", null: false
     t.integer "location_id", null: false
     t.integer "area_id", null: false
+    t.integer "user_id"
     t.index ["area_id"], name: "index_operators_on_area_id"
     t.index ["location_id"], name: "index_operators_on_location_id"
+    t.index ["user_id"], name: "index_operators_on_user_id"
   end
 
   create_table "ro_dprs", force: :cascade do |t|
@@ -79,10 +85,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_08_183613) do
     t.integer "operator_id"
     t.integer "area_id"
     t.integer "location_id"
+    t.integer "user_id"
     t.index ["area_id"], name: "index_ro_dprs_on_area_id"
     t.index ["dpr_id"], name: "index_ro_dprs_on_dpr_id"
     t.index ["location_id"], name: "index_ro_dprs_on_location_id"
     t.index ["operator_id"], name: "index_ro_dprs_on_operator_id"
+    t.index ["user_id"], name: "index_ro_dprs_on_user_id"
   end
 
   create_table "stp_dprs", force: :cascade do |t|

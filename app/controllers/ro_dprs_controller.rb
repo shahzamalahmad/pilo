@@ -4,7 +4,7 @@ class RoDprsController < ApplicationController
     
     @date = params[:date] || Date.today.to_s 
     
-    @ro_dpr =  RoDpr.where(date: @date) 
+    @ro_dpr =  current_user.ro_dprs.where(date: @date) 
     # @page = params[:page] || 1
     # @cd = RoDpr.group(:date).count
 
@@ -42,10 +42,17 @@ class RoDprsController < ApplicationController
 
   def new
 
-    @ro_dpr = RoDpr.new
-    @operators = Operator.all
-    @areas = Area.all
-    @locations = Location.all
+    @ro_dpr = current_user.ro_dprs.build
+    @operators = current_user.operators.all
+    @areas = current_user.areas.all
+    @locations = current_user.locations.all
+
+    # @ro_dpr = RoDpr.new
+    # @operators = Operator.all
+    # @areas = Area.all
+    # @locations = Location.all
+
+
     @k = 1
 
   end
@@ -54,7 +61,8 @@ class RoDprsController < ApplicationController
 
   def create
     # binding.pry
-   @ro_dpr = RoDpr.new(ro_dpr_params)
+   # @ro_dpr = RoDpr.new(ro_dpr_params)
+   @ro_dpr = current_user.ro_dprs.build(ro_dpr_params)
 
   
 
@@ -65,18 +73,25 @@ class RoDprsController < ApplicationController
       flash.now[:alert] = 'Error while sending message!'
       render :new, status: :unprocessable_entity
     end
-    @operators = Operator.all
-    @areas = Area.all
-    @locations = Location.all
+    @operators = current_user.operators.all
+    @areas = current_user.areas.all
+    @locations = current_user.locations.all
+    # @operators = Operator.all
+    # @areas = Area.all
+    # @locations = Location.all
 
 
   end
 
  def edit
-    @ro_dpr = RoDpr.find(params[:id])
-     @operators = Operator.all
-   @areas = Area.all
-   @locations = Location.all
+    @ro_dpr = current_user.ro_dprs.find(params[:id])
+    @operators = current_user.operators.all
+    @areas = current_user.areas.all
+    @locations = current_user.locations.all
+   #  @ro_dpr = RoDpr.find(params[:id])
+   #   @operators = Operator.all
+   # @areas = Area.all
+   # @locations = Location.all
     
   end
 
@@ -108,7 +123,7 @@ class RoDprsController < ApplicationController
 
  private
     def ro_dpr_params
-      params.require(:ro_dpr).permit(:sr_no, :area_id, :location_id, :operator_id, :tshirt, :icard, :mask, :shoes, :hygiene, :live_location, :behaviour, :punctuality, :photos, :machine_videos, :feedback, :inspaction, :backlight, :wrapping, :tv, :glass, :nozzle, :cip_backwash, :cleaning, :camera, :tds, :flow, :total_marks, :ph, :temp, :date, :dpr_id)
+      params.require(:ro_dpr).permit(:sr_no, :area_id, :location_id, :operator_id, :tshirt, :icard, :mask, :shoes, :hygiene, :live_location, :behaviour, :punctuality, :photos, :machine_videos, :feedback, :inspaction, :backlight, :wrapping, :tv, :glass, :nozzle, :cip_backwash, :cleaning, :camera, :tds, :flow, :total_marks, :ph, :temp, :date, :dpr_id, :user_id)
     end
     
 end

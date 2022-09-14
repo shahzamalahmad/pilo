@@ -1,15 +1,17 @@
 class AreasController < ApplicationController
 def index
-    @areas = Area.all
+    @areas = current_user.areas.all
   end
   
   def new
+    # @areas = Area.new
     @areas = current_user.areas.build
   end
 
    def create
 
-    @areas = Area.create(areas_params)
+    # @areas = Area.create(areas_params)
+    @areas = current_user.areas.build(areas_params)
 
   
 
@@ -48,6 +50,6 @@ def index
 
   private
     def areas_params
-     params.require(:area).permit(:area_name)
+     params.require(:area).permit(:area_name, :user_id)
     end
 end

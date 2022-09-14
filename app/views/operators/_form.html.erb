@@ -15,6 +15,8 @@
 	      <h5><%= form.label :plant_type, style: "display: block" %> </h5>
 	      
 	        <%= form.select :plant_type, options_for_select([["select plant"],"RO", "STP", "ETP"]), { class: "genForm_dropBox", required: true } %>
+          <%= form.number_field :user_id, value:current_user.id, type: :hidden %>
+	        
 	    </div>
 			<br>
 			<br>
