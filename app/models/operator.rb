@@ -4,5 +4,6 @@ class Operator < ApplicationRecord
 	belongs_to :user, optional: true
 	
 	has_many :ro_dprs, dependent: :destroy
+	has_many :stp_dprs, dependent: :destroy
 
 end

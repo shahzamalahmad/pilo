@@ -2,20 +2,27 @@ class StpDprsController < ApplicationController
 def index
 	@date = params[:date] || Date.today.to_s 
     
-    @stp_dpr =  StpDpr.where(date: @date)
+    @stp_dpr =  current_user.stp_dprs.where(date: @date)
   # @page = params[:page] || 1
   #   pageCount = 11
   #   offset = ((@page.to_i) - 1) * pageCount
   #   @stp_dpr =  StpDpr.all.limit(pageCount).offset(offset)
         @i = 0
+     @operators = Operator.all
+     @areas = Area.all
+     @locations = Location.all
 end
 
 
   def show
-      @stp_dpr = StpDpr.all
+      # @stp_dpr = StpDpr.all
       @stp_dpr = StpDpr.find(params[:id])
 
-  end
+      @operators = Operator.all
+      @areas = Area.all
+      @locations = Location.all
+
+  end 
 
   def dpr
     @dprs = Dpr.all
@@ -24,22 +31,33 @@ end
 
 
 def new
-    @stp_dpr = StpDpr.new
+    @stp_dpr = current_user.stp_dprs.build
+    @operators = current_user.operators.all
+    @areas = current_user.areas.all
+    @locations = current_user.locations.all
   end
 
   def create
 
-   @stp_dpr = StpDpr.new(stp_dpr_params)
+   @stp_dpr = current_user.stp_dprs.build(stp_dpr_params)
    if @stp_dpr.save
       redirect_to @stp_dpr
     else
+      flash.now[:alert] = 'Error while sending message!'
+
       render :new, status: :unprocessable_entity
     end
+    @operators = current_user.operators.all
+    @areas = current_user.areas.all
+    @locations = current_user.locations.all
 
   end
 
   def edit
     @stp_dpr = StpDpr.find(params[:id])
+    @operators = current_user.operators.all
+    @areas = current_user.areas.all
+    @locations = current_user.locations.all
 
   end
 
@@ -72,7 +90,7 @@ def new
 
  private
     def stp_dpr_params
-      params.require(:stp_dpr).permit(:sr_no, :location, :operator_name, :uniform, :mask, :photos, :videos, :live_location, :behaviour, :punctuality, :pcl_display_picture, :daily_report, :r_and_m, :backwash, :blower_oil, :compressor_oil, :total_marks, :outer_area_maintainance, :date, :dpr_id)
+      params.require(:stp_dpr).permit(:sr_no, :area_id, :location_id, :operator_id, :uniform, :mask, :photos, :videos, :live_location, :behaviour, :punctuality, :pcl_display_picture, :daily_report, :r_and_m, :backwash, :blower_oil, :compressor_oil, :total_marks, :outer_area_maintainance, :date, :dpr_id, :user_id)
     end
 
 

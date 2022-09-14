@@ -44,8 +44,8 @@
     
       <tr>
         <th scope="col", style="text-align: center;"> <%= link_to params[:id] %> </th>
-       <th scope="col", style="text-align: center;"> <%= @stp_dpr.location %> </th>
-       <th scope="col", style="text-align: center;"> <%= link_to @stp_dpr.operator_name,@stp_dpr %> </th>
+       <th scope="col", style="text-align: center;"> <%= @stp_dpr.location.location_name %> </th>
+       <th scope="col", style="text-align: center;"> <%= link_to @stp_dpr.operator.operator_name,@stp_dpr %> </th>
        <td scope="col", style="text-align: center;"> <%= @stp_dpr.uniform %> </td>
        <td scope="col", style="text-align: center;"> <%= @stp_dpr.mask %> </td>
        <td scope="col", style="text-align: center;"> <%= @stp_dpr.photos %> </td>

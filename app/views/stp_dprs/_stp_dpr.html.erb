@@ -50,13 +50,14 @@
     </tr>
   </thead>
   <tbody>
+    <%# binding.pry %>
   	<% @stp_dpr.each do |stpdpr|%>
       <tr>
         
         
          <th scope="col", style="text-align: center;"> <%= link_to @i += 1,stpdpr %> </th>
-       <th scope="col", style="text-align: center;"> <%= stpdpr.location %> </th>
-       <th scope="col", style="text-align: center;"> <%= link_to stpdpr.operator_name,stpdpr %> </th>
+       <th scope="col", style="text-align: center;"> <%= stpdpr.location.location_name %> </th>
+       <th scope="col", style="text-align: center;"> <%= link_to stpdpr.operator.operator_name,stpdpr %> </th>
        <td scope="col", style="text-align: center;"> <%= stpdpr.uniform %> </td>
        <td scope="col", style="text-align: center;"> <%= stpdpr.mask %> </td>
        <td scope="col", style="text-align: center;"> <%= stpdpr.photos %> </td>

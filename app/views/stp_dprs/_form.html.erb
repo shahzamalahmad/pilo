@@ -20,14 +20,25 @@
     </div>
   <br>
     <div class="col">
+      <h5>
+        <%= form.label :area, style: "display: block" %> 
+      </h5>
+        <%#= form.select :area_name, @areas.collect {|u| [ u.area_name ] } %>
+        <%= form.select 'area_id', options_for_select(@areas.collect{ |u| [u.area_name, u.id] }), options ={:prompt => "Select Area"} %>
+
       <h5><%= form.label :location, style: "display: block" %> </h5>
+
+        <%= form.select 'location_id', options_for_select(@locations.collect{ |u| [u.location_name, u.id] }), options ={:prompt => "Select Location"} %>
       
-        <%= form.select :location, options_for_select([["Select location", ""], "Jhansi site 1", "jhansi site 2", "Both Jhansi", "allahabad", "gandhidham", "pune", "Banarash"]), { prompt: "Select..." }, { class: "genForm_dropBox", required: true } %>
+        <%#= form.select :location, options_for_select([["Select location", ""], "Jhansi site 1", "jhansi site 2", "Both Jhansi", "allahabad", "gandhidham", "pune", "Banarash"]), { prompt: "Select..." }, { class: "genForm_dropBox", required: true } %>
     </div>
   <br>
   <div class="col">
     <h5><%= form.label :operator_name, style: "display: block" %> </h5>
-    <%= form.select :operator_name, options_for_select([["Select operator", ""], "Asheesh Sevaniya", "Ajay Kumar", "Mithun Ahirvar", "Anil kumar Yadav", "Vikrant Mishra"]), { prompt: "Select..." }, { class: "genForm_dropBox", required: true } %>
+
+
+        <%= form.select 'operator_id', options_for_select(@operators.collect{ |u| [u.operator_name, u.id] }), options ={:prompt => "Select operator"} %>
+    <%#= form.select :operator_name, options_for_select([["Select operator", ""], "Asheesh Sevaniya", "Ajay Kumar", "Mithun Ahirvar", "Anil kumar Yadav", "Vikrant Mishra"]), { prompt: "Select..." }, { class: "genForm_dropBox", required: true } %>
   </div>
 </div>
 <br>
@@ -148,6 +159,7 @@
         <% form.text_field :total_marks, class:"form-control"%>
 
       </div>
+      <%= form.number_field :user_id, value:current_user.id, type: :hidden %>
       <br>
       <div class="col">
         <!-- <h5><#%= form.label :dpr_id, style: "display: block", style:"display: none;" %> </h5>

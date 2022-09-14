@@ -25,8 +25,8 @@ class RoDprsController < ApplicationController
   
 
   def show
-       @ro_dpr = RoDpr.find(params[:id])
-        @operators = Operator.all
+     @ro_dpr = RoDpr.find(params[:id])
+     @operators = Operator.all
      @areas = Area.all
      @locations = Location.all
  

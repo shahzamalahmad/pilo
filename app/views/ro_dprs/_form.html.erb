@@ -273,6 +273,7 @@
         <% form.text_field :total_marks, class:"form-control"%>
 
       </div>
+      <%= form.number_field :user_id, value:current_user.id, type: :hidden %>
       <br>
       <div class="col">
        <!--  <h5><#%= form.label :dpr_id, style: "display: block", style:"display: none;" %> </h5>
